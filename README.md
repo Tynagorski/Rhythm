@@ -104,9 +104,12 @@ Two rules hold the structure together:
 ## The website
 
 `web/` is a static marketing site — landing page, privacy policy and support
-page — deployed to GitHub Pages by `.github/workflows/pages.yml`. Enable it under
-**Settings → Pages → Source: GitHub Actions** and it goes live at
-`https://tynagorski.github.io/Rhythm/`.
+page — deployed by `.github/workflows/pages.yml`.
+
+Note that GitHub Pages needs a public repository, or a paid plan on a private
+one. The workflow probes for this and skips with a notice rather than failing.
+`Docs/LAUNCH.md` covers the three ways through it; hosting `web/` on Cloudflare
+Pages or Netlify keeps the source private and the site public.
 
 The privacy and support pages are not decoration: App Store submission requires
 both URLs to resolve, and `SettingsView` links to them.

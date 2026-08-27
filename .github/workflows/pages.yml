@@ -23,10 +23,53 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Whether Pages can be used at all is an account property, not something the
+  # code controls: a private repository needs a paid plan for it. Probe first
+  # and skip cleanly, so an unavailable Pages site reports as a notice rather
+  # than failing every push.
+  preflight:
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.probe.outputs.enabled }}
+    steps:
+      - id: probe
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -uo pipefail
+          api="https://api.github.com/repos/$REPO/pages"
+          auth=(-H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json")
+
+          code=$(curl -sS -o /dev/null -w '%{http_code}' "${auth[@]}" "$api")
+          if [ "$code" = "200" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            echo "Pages is already enabled."
+            exit 0
+          fi
+
+          echo "Pages not configured (HTTP $code); attempting to enable it."
+          create=$(curl -sS -o /dev/null -w '%{http_code}' -X POST "${auth[@]}" \
+            "$api" -d '{"build_type":"workflow"}')
+          if [ "$create" = "201" ] || [ "$create" = "204" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            echo "Enabled Pages for this repository."
+            exit 0
+          fi
+
+          echo "enabled=false" >> "$GITHUB_OUTPUT"
+          msg="Could not enable GitHub Pages (HTTP $create). Pages is free for public"
+          msg="$msg repositories; on a private one it needs GitHub Pro or higher. Make the"
+          msg="$msg repository public, upgrade the plan, or host web/ on Cloudflare Pages or"
+          msg="$msg Netlify instead - see Docs/LAUNCH.md. The site is fine; only publishing is blocked."
+          echo "::notice title=Site not deployed::$msg"
+
   build:
+    needs: preflight
+    if: needs.preflight.outputs.enabled == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Check every page parses and carries its metadata
         run: python3 Scripts/check_site.py

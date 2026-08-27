@@ -38,17 +38,38 @@ before the App Store version is worth anyone's time.
 
 ## The website is already live-able
 
-`web/` is a real static site, and `.github/workflows/pages.yml` deploys it to
-GitHub Pages on every push. To turn it on:
+`web/` is a real static site and `.github/workflows/pages.yml` deploys it on
+every push. **But there is a blocker worth knowing before you try:**
 
-**Settings → Pages → Build and deployment → Source: GitHub Actions.**
+> **This repository is private, and GitHub Pages on a private repository requires
+> GitHub Pro or higher.** On a free personal account, Pages only works for public
+> repositories. The deploy workflow probes for this and skips with a notice
+> rather than failing, so CI stays green either way.
 
-That is one click, and then the site is at
-`https://tynagorski.github.io/Rhythm/` within about a minute.
+You have three ways through it, and the right one is a business decision rather
+than a technical one:
 
-The workflow currently deploys from `main` **and** from the feature branch, so
-the site can go up before the app PR merges. Once it merges, trim the branch list
-in `pages.yml` to `main`.
+| Option | Cost | Trade-off |
+|---|---|---|
+| **Make the repo public** | Free | The whole app source becomes public — including the scoring engine, which is the actual idea |
+| **GitHub Pro** | $4/mo | Repo stays private; Pages works. Make sure the site's visibility is set to public, or search engines cannot index it |
+| **Host `web/` elsewhere** | Free | Cloudflare Pages, Netlify and Vercel all deploy a public site from a *private* GitHub repo. Best of both, and a stronger CDN than Pages |
+
+**For the SEO goal specifically, option 3 is the one I would pick.** It keeps the
+source private, gives you a public indexable site, and none of those hosts charge
+for this. Point them at the `web/` directory as the publish root — there is no
+build command, it is plain static files.
+
+If you do enable Pages, the workflow enables it via the API automatically on the
+next push, and the site lands at `https://tynagorski.github.io/Rhythm/`.
+
+The workflow deploys from `main` **and** from the feature branch, so the site can
+go up before the app PR merges. Once it merges, trim the branch list in
+`pages.yml` to `main`.
+
+Whichever host you choose, **a search engine cannot index a page it cannot
+reach** — verify the deployed URL loads in a private browser window before
+spending any effort on SEO.
 
 What the site already does:
 
@@ -150,8 +171,9 @@ on any of the above.
 
 ## Order of operations
 
-- [ ] Enable GitHub Pages (Settings → Pages → Source: GitHub Actions) — the site
-      goes live
+- [ ] Decide how the site gets hosted: make the repo public, buy GitHub Pro, or
+      point Cloudflare Pages / Netlify at `web/` from the private repo. Verify the
+      URL loads in a private window
 - [ ] Buy a domain and add `web/CNAME`; update `BASE` in
       `Scripts/build_doc_pages.py`, `Scripts/check_site.py`, the canonical tags
       and `SettingsView`
