@@ -1,0 +1,1135 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		096F735BEBD05FAAC74F064E = {
+			isa = PBXBuildFile; fileRef = CB34C3A8B5229DE8DDAEABB5;
+		};
+		0B79152E93BABC796641D416 = {
+			isa = PBXBuildFile; fileRef = 0D868771AAB433563F65DA34;
+		};
+		0DA229B962F8A31F7D944313 = {
+			isa = PBXBuildFile; fileRef = FAC32DA7A715E6C20D5ED9F5;
+		};
+		10DDB3706740C87EA39F3145 = {
+			isa = PBXBuildFile; fileRef = FDB599CB3DA2E4B3EAF7B51F;
+		};
+		16997ABBF7A557E872B652D8 = {
+			isa = PBXBuildFile; fileRef = 6A6FEAE49B59F83E015F1589;
+		};
+		16FF2BF3F4AEFE571AADCCCC = {
+			isa = PBXBuildFile; fileRef = 1273B77485E5D629151478AB;
+		};
+		1DC48C64EE1BFAC4444B0697 = {
+			isa = PBXBuildFile; fileRef = DA51614BFC6E9FF43D8AB16F;
+		};
+		205F6A1BDA95FC1852229188 = {
+			isa = PBXBuildFile; fileRef = 18F4C406FF3134E1E3C44557;
+		};
+		219654C6EB66A260AAD59BEF = {
+			isa = PBXBuildFile; fileRef = 571A0CB591F8D6D00667857D;
+		};
+		24EFD94187D201849244CBFD = {
+			isa = PBXBuildFile; fileRef = 9DCA2224C269736C6B2A9EE3;
+		};
+		266B8713BE9BE3976498A2D4 = {
+			isa = PBXBuildFile; fileRef = 805956139FDE3706B77D1C04;
+		};
+		282601C26E898EE8E78AAD1A = {
+			isa = PBXBuildFile; fileRef = 3A8127CABB86007B8A07FDA2;
+		};
+		29506A51EE34EDEC56F515E8 = {
+			isa = PBXBuildFile; fileRef = EC936D89A4620EC644FDC726;
+		};
+		2C2668C53DC31544AB2B9E4A = {
+			isa = PBXBuildFile; fileRef = EC936D89A4620EC644FDC726;
+		};
+		33BED993F736461A876FC371 = {
+			isa = PBXBuildFile; fileRef = 74778019AF182848D78BE7C6;
+		};
+		3A47771AF9D144DE736B743E = {
+			isa = PBXBuildFile; fileRef = C53CBD3BD685FD0A15946515;
+		};
+		412F04F8074BCC03864C5886 = {
+			isa = PBXBuildFile; fileRef = F0C5E1A813E4868DE837D24B;
+		};
+		437A5B8406E3A6BA0A64644E = {
+			isa = PBXBuildFile; fileRef = E2C949D97F6C86E2776F30A2;
+		};
+		43AF487EA061BEEAC41E5218 = {
+			isa = PBXBuildFile; fileRef = C8FA3C714334E0492E0D0081;
+		};
+		4462B2DFF5DE9AC917330350 = {
+			isa = PBXBuildFile; fileRef = 1273B77485E5D629151478AB;
+		};
+		49AA564EA779FCC10010E9EA = {
+			isa = PBXBuildFile; fileRef = 89A72D6E6E15E4CCF4FF4086;
+		};
+		4ADDC999C90EB3174042622A = {
+			isa = PBXBuildFile; fileRef = 570BFA746A528D9003CF26E3;
+		};
+		5250C7AF735CFA82502800AD = {
+			isa = PBXBuildFile; fileRef = 59F9FE036C8A6784CA7E57B6;
+		};
+		533A6B0A5187C435AB0FF0C7 = {
+			isa = PBXBuildFile; fileRef = 66993C5CB384567AE5FF0FAD;
+		};
+		53C59048B7455C6760FA1BBF = {
+			isa = PBXBuildFile; fileRef = F4D3C44F014FD71676CBB025;
+		};
+		57B967DF347151EEB1262F30 = {
+			isa = PBXBuildFile; fileRef = 571A0CB591F8D6D00667857D;
+		};
+		5AC76A5D7294959C51A3FC1E = {
+			isa = PBXBuildFile; fileRef = EEAF8E4221FEF4862C45B059;
+		};
+		5AFD3B2DB036FF1AC5C330F3 = {
+			isa = PBXBuildFile; fileRef = C53CBD3BD685FD0A15946515;
+		};
+		5E0660FCF5748FD0EFFD88D8 = {
+			isa = PBXBuildFile; fileRef = 9FCE0E968465C114EC8B843D;
+		};
+		5E2464D7103BE374893D0599 = {
+			isa = PBXBuildFile; fileRef = 46837132290AA8A76076FD6A;
+		};
+		63E1D181336142CC0A55D5C9 = {
+			isa = PBXBuildFile; fileRef = CBF62D991F9619379BE73603;
+		};
+		6462FA369A6D7631B7E341EF = {
+			isa = PBXBuildFile; fileRef = 219DDA2A2846AB06F6D64C26;
+		};
+		6528D87CFFB8003233BD9243 = {
+			isa = PBXBuildFile; fileRef = 6A6FEAE49B59F83E015F1589;
+		};
+		6AD7BA7BA6084CFB0F931B68 = {
+			isa = PBXBuildFile; fileRef = C5C478A248C91938F1F04B7E;
+		};
+		6B632B84F29025E3B88DF96B = {
+			isa = PBXBuildFile; fileRef = 1B75CC2AD01DC9DFC4079D08; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); };
+		};
+		76B99542E4CF973C8580F600 = {
+			isa = PBXBuildFile; fileRef = D8F0EEF2917CC5693EC4BF86;
+		};
+		7A5E0D0ECBCBDD1D02D51463 = {
+			isa = PBXBuildFile; fileRef = 6A2EEE9A03777079F6439445;
+		};
+		7B04BA02534CFACA6A9D6619 = {
+			isa = PBXBuildFile; fileRef = 37E313BC3D42B456A157CB55;
+		};
+		7B9CA9193451DEBC1DCE640F = {
+			isa = PBXBuildFile; fileRef = C218E1862D74304785502142;
+		};
+		7C4DD5A9EF96839A0862372A = {
+			isa = PBXBuildFile; fileRef = C5058314A29FEE4669D5C402;
+		};
+		81012999B8156C27921C3327 = {
+			isa = PBXBuildFile; fileRef = 046BC2B1728D62AB275579D1;
+		};
+		841E3F2C51392F26DDD6929C = {
+			isa = PBXBuildFile; fileRef = C33217C937119EEFF183EE2D;
+		};
+		8971A6C4389C48A9D5A77A24 = {
+			isa = PBXBuildFile; fileRef = DA9CFA223D7750A64299F2CD;
+		};
+		8D1B4E52FBF229C2E87E8761 = {
+			isa = PBXBuildFile; fileRef = 47B30995471BAF890428E055;
+		};
+		8D9910E12B86DBA52CAB53DD = {
+			isa = PBXBuildFile; fileRef = EDE531BD9CBF09C37232B364;
+		};
+		8DFC791B7C3D48CB5ECC5E82 = {
+			isa = PBXBuildFile; fileRef = EDE531BD9CBF09C37232B364;
+		};
+		8ED57C47B78B31225BD01DF4 = {
+			isa = PBXBuildFile; fileRef = 11C8B12AA3F37713F9393D60;
+		};
+		90B60B24E2723089D0A6BC17 = {
+			isa = PBXBuildFile; fileRef = C2A6B13311F47B30F27C5BE0;
+		};
+		94CA3060E03AA9145EB3ACDB = {
+			isa = PBXBuildFile; fileRef = 47B30995471BAF890428E055;
+		};
+		964108C0DB09B8B77C31FE79 = {
+			isa = PBXBuildFile; fileRef = 52B0313036A76DBC05071425;
+		};
+		9FD133A1DB8108C9C87DA3BC = {
+			isa = PBXBuildFile; fileRef = 6A2EEE9A03777079F6439445;
+		};
+		A025EA51C5D307CDA2F07DBF = {
+			isa = PBXBuildFile; fileRef = 4673D2BCB5D43E6F966F8A37;
+		};
+		A86638F6061297B3F9D50143 = {
+			isa = PBXBuildFile; fileRef = 01216EDE74B9E86E1F8A218E;
+		};
+		AB00F598411A8405F5FAC1B4 = {
+			isa = PBXBuildFile; fileRef = 0D868771AAB433563F65DA34;
+		};
+		AE064EAD9862C80745EA82B4 = {
+			isa = PBXBuildFile; fileRef = 9FCE0E968465C114EC8B843D;
+		};
+		AE11886F968095F57115E344 = {
+			isa = PBXBuildFile; fileRef = 11C8B12AA3F37713F9393D60;
+		};
+		BC50CA96D715CF033B2ADABF = {
+			isa = PBXBuildFile; fileRef = E8DDCC24A37541D75B9A29AB;
+		};
+		C35C7A83924FB2EE803F3CD6 = {
+			isa = PBXBuildFile; fileRef = A5F5562823C7A08020424485;
+		};
+		C3D5E39084693623A05343BE = {
+			isa = PBXBuildFile; fileRef = C8FA3C714334E0492E0D0081;
+		};
+		C4CB1DB816D144CE5A66D1C4 = {
+			isa = PBXBuildFile; fileRef = E1572D9A973D3974697551A5;
+		};
+		C698D2DA7668794C67217612 = {
+			isa = PBXBuildFile; fileRef = 046BC2B1728D62AB275579D1;
+		};
+		CCB1E06BEB53451FA307516D = {
+			isa = PBXBuildFile; fileRef = 33162C39A8CC623C7E9C29DE;
+		};
+		D07217E8E3CB2C3D04CF65AF = {
+			isa = PBXBuildFile; fileRef = E110C97738185E06F9201013;
+		};
+		D204D76E13F099FB3130E441 = {
+			isa = PBXBuildFile; fileRef = DD7DC6CCF1DFA1E970E09690;
+		};
+		D53B19F73167E16F1A8B63BE = {
+			isa = PBXBuildFile; fileRef = 37E313BC3D42B456A157CB55;
+		};
+		D76C000A1267A310802ED1E0 = {
+			isa = PBXBuildFile; fileRef = 3ABDFFA73886821017560B3F;
+		};
+		D8D2DB6C09E779DB48C8F54F = {
+			isa = PBXBuildFile; fileRef = C5C478A248C91938F1F04B7E;
+		};
+		D8D6D6A6AA4358F512F4C267 = {
+			isa = PBXBuildFile; fileRef = F4D3C44F014FD71676CBB025;
+		};
+		D91F5D68103260F960EC7112 = {
+			isa = PBXBuildFile; fileRef = C218E1862D74304785502142;
+		};
+		DBCDC68ADA205F524DAEE05A = {
+			isa = PBXBuildFile; fileRef = 9315A624C07313CF55D57B2E;
+		};
+		EA8064CD958E3435CF02A0FE = {
+			isa = PBXBuildFile; fileRef = 1B7DF3002875988717F3997A;
+		};
+		F70E1E5AF99A7575D493DCC3 = {
+			isa = PBXBuildFile; fileRef = 01216EDE74B9E86E1F8A218E;
+		};
+		F808C4E9CA51F7B9CD132B8B = {
+			isa = PBXBuildFile; fileRef = FDB599CB3DA2E4B3EAF7B51F;
+		};
+		FDF03F13A8B5C47029910AE7 = {
+			isa = PBXBuildFile; fileRef = C33217C937119EEFF183EE2D;
+		};
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		59108C4E0872B40CE1B2D9BB = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1F8AA094B4B4949139D67B1;
+			proxyType = 1;
+			remoteGlobalIDString = 9E240BC9BA66686BA6BFCCE7;
+			remoteInfo = "RhythmWidgets";
+		};
+		D66274F0EF9FB3AA371D5422 = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1F8AA094B4B4949139D67B1;
+			proxyType = 1;
+			remoteGlobalIDString = A4B57E2A2DEDC78C4CE11B0D;
+			remoteInfo = "Rhythm";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4F25D6885297DAF6AD504418 = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6B632B84F29025E3B88DF96B,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		01216EDE74B9E86E1F8A218E = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DayAssembler.swift"; path = "Rhythm/Core/Engine/DayAssembler.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		046BC2B1728D62AB275579D1 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppGroup.swift"; path = "Rhythm/Core/Store/AppGroup.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		0D868771AAB433563F65DA34 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Priority.swift"; path = "Rhythm/Core/Models/Priority.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		11C8B12AA3F37713F9393D60 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RhythmIntents.swift"; path = "Rhythm/Intents/RhythmIntents.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		1273B77485E5D629151478AB = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NotificationCatalog.swift"; path = "Rhythm/Core/Services/NotificationCatalog.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		18F4C406FF3134E1E3C44557 = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PrivacyInfo.xcprivacy"; path = "RhythmWidgets/PrivacyInfo.xcprivacy"; sourceTree = "SOURCE_ROOT";
+		};
+		1B75CC2AD01DC9DFC4079D08 = {
+			isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RhythmWidgets.appex"; sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B7DF3002875988717F3997A = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CalendarIntegrityWidget.swift"; path = "RhythmWidgets/CalendarIntegrityWidget.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		219DDA2A2846AB06F6D64C26 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BalanceWidget.swift"; path = "RhythmWidgets/BalanceWidget.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		33162C39A8CC623C7E9C29DE = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ShutdownView.swift"; path = "Rhythm/Features/Shutdown/ShutdownView.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		37E313BC3D42B456A157CB55 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Palette.swift"; path = "Rhythm/Core/DesignSystem/Palette.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		3A8127CABB86007B8A07FDA2 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CalendarAnalysisTests.swift"; path = "RhythmTests/CalendarAnalysisTests.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		3ABDFFA73886821017560B3F = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlanView.swift"; path = "Rhythm/Features/Plan/PlanView.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		4673D2BCB5D43E6F966F8A37 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PriorityEditor.swift"; path = "Rhythm/Features/Today/PriorityEditor.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		46837132290AA8A76076FD6A = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TodayComponents.swift"; path = "Rhythm/Features/Today/TodayComponents.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		47B30995471BAF890428E055 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BalanceEngine.swift"; path = "Rhythm/Core/Engine/BalanceEngine.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		52B0313036A76DBC05071425 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StoreTests.swift"; path = "RhythmTests/StoreTests.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		570BFA746A528D9003CF26E3 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LockScreenWidget.swift"; path = "RhythmWidgets/LockScreenWidget.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		571A0CB591F8D6D00667857D = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RitualEntity.swift"; path = "Rhythm/Intents/RitualEntity.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		59F9FE036C8A6784CA7E57B6 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RhythmCoordinator.swift"; path = "Rhythm/Core/Services/RhythmCoordinator.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		652D82DC6B208416F352F7C7 = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Rhythm/App/Info.plist"; sourceTree = "SOURCE_ROOT";
+		};
+		66993C5CB384567AE5FF0FAD = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RitualsView.swift"; path = "Rhythm/Features/Rituals/RitualsView.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		69719EF043F2448791E6FD4B = {
+			isa = PBXFileReference; explicitFileType = "wrapper.cfbundle"; includeInIndex = 0; path = "RhythmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6A2EEE9A03777079F6439445 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Domain.swift"; path = "Rhythm/Core/Models/Domain.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		6A6FEAE49B59F83E015F1589 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Components.swift"; path = "Rhythm/Core/DesignSystem/Components.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		74778019AF182848D78BE7C6 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "OnboardingView.swift"; path = "Rhythm/Features/Onboarding/OnboardingView.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		805956139FDE3706B77D1C04 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RitualsWidget.swift"; path = "RhythmWidgets/RitualsWidget.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		89A72D6E6E15E4CCF4FF4086 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BalanceView.swift"; path = "Rhythm/Features/Balance/BalanceView.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		9315A624C07313CF55D57B2E = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CalendarService.swift"; path = "Rhythm/Core/Services/CalendarService.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		9DCA2224C269736C6B2A9EE3 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BalanceEngineTests.swift"; path = "RhythmTests/BalanceEngineTests.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		9FCE0E968465C114EC8B843D = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppPreferences.swift"; path = "Rhythm/Core/Store/AppPreferences.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		A5F5562823C7A08020424485 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TodayWidget.swift"; path = "RhythmWidgets/TodayWidget.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		A915F3432564CA1F2E39E033 = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Rhythm.entitlements"; path = "Rhythm/App/Rhythm.entitlements"; sourceTree = "SOURCE_ROOT";
+		};
+		BAFDF90D09A0F01E8F3B939F = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "RhythmWidgets.entitlements"; path = "RhythmWidgets/RhythmWidgets.entitlements"; sourceTree = "SOURCE_ROOT";
+		};
+		C218E1862D74304785502142 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CalendarModels.swift"; path = "Rhythm/Core/Models/CalendarModels.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		C2A6B13311F47B30F27C5BE0 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TodayView.swift"; path = "Rhythm/Features/Today/TodayView.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		C33217C937119EEFF183EE2D = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RhythmStore.swift"; path = "Rhythm/Core/Store/RhythmStore.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		C5058314A29FEE4669D5C402 = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PrivacyInfo.xcprivacy"; path = "Rhythm/App/PrivacyInfo.xcprivacy"; sourceTree = "SOURCE_ROOT";
+		};
+		C53CBD3BD685FD0A15946515 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Mutations.swift"; path = "Rhythm/Core/Store/Mutations.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		C5C478A248C91938F1F04B7E = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DateExtensions.swift"; path = "Rhythm/Core/Extensions/DateExtensions.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		C8FA3C714334E0492E0D0081 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Ritual.swift"; path = "Rhythm/Core/Models/Ritual.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		CB34C3A8B5229DE8DDAEABB5 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RhythmWidgetsBundle.swift"; path = "RhythmWidgets/RhythmWidgetsBundle.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		CBF62D991F9619379BE73603 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RhythmTimelineProvider.swift"; path = "RhythmWidgets/RhythmTimelineProvider.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		D2597CCE97E12C6193467EEE = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "RhythmWidgets/Info.plist"; sourceTree = "SOURCE_ROOT";
+		};
+		D8F0EEF2917CC5693EC4BF86 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ScoreTrendChart.swift"; path = "Rhythm/Features/Balance/ScoreTrendChart.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		DA51614BFC6E9FF43D8AB16F = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppDelegate.swift"; path = "Rhythm/App/AppDelegate.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		DA9CFA223D7750A64299F2CD = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CalendarReviewView.swift"; path = "Rhythm/Features/CalendarReview/CalendarReviewView.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		DD7DC6CCF1DFA1E970E09690 = {
+			isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Assets.xcassets"; path = "Rhythm/Resources/Assets.xcassets"; sourceTree = "SOURCE_ROOT";
+		};
+		E110C97738185E06F9201013 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SettingsView.swift"; path = "Rhythm/Features/Settings/SettingsView.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		E1572D9A973D3974697551A5 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PushService.swift"; path = "Rhythm/Core/Services/PushService.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		E2BD6FEECEFA6D36B1D966C5 = {
+			isa = PBXFileReference; explicitFileType = "wrapper.application"; includeInIndex = 0; path = "Rhythm.app"; sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E2C949D97F6C86E2776F30A2 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RootView.swift"; path = "Rhythm/App/RootView.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		E8DDCC24A37541D75B9A29AB = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RhythmApp.swift"; path = "Rhythm/App/RhythmApp.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		EC936D89A4620EC644FDC726 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StreakEngine.swift"; path = "Rhythm/Core/Engine/StreakEngine.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		EDE531BD9CBF09C37232B364 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Typography.swift"; path = "Rhythm/Core/DesignSystem/Typography.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		EEAF8E4221FEF4862C45B059 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WidgetSnapshot.swift"; path = "RhythmWidgets/WidgetSnapshot.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		F0C5E1A813E4868DE837D24B = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NotificationService.swift"; path = "Rhythm/Core/Services/NotificationService.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		F4D3C44F014FD71676CBB025 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DayQueries.swift"; path = "Rhythm/Core/Store/DayQueries.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		FAC32DA7A715E6C20D5ED9F5 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RitualEditor.swift"; path = "Rhythm/Features/Rituals/RitualEditor.swift"; sourceTree = "SOURCE_ROOT";
+		};
+		FDB599CB3DA2E4B3EAF7B51F = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DayLog.swift"; path = "Rhythm/Core/Models/DayLog.swift"; sourceTree = "SOURCE_ROOT";
+		};
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1584B61B3FD096B735E4A97A = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B80EA286EE6B6CB5B72E991 = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0CB685E9A122BAF9005FC12 = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FF73D036C01B3D329061331 = {
+			isa = PBXGroup;
+			children = (
+				046BC2B1728D62AB275579D1,
+				9FCE0E968465C114EC8B843D,
+				F4D3C44F014FD71676CBB025,
+				C53CBD3BD685FD0A15946515,
+				C33217C937119EEFF183EE2D,
+			);
+			name = "Store";
+			sourceTree = "<group>";
+		};
+		1011CA4B5826768BE1A85B6C = {
+			isa = PBXGroup;
+			children = (
+				DA51614BFC6E9FF43D8AB16F,
+				E8DDCC24A37541D75B9A29AB,
+				E2C949D97F6C86E2776F30A2,
+				652D82DC6B208416F352F7C7,
+				A915F3432564CA1F2E39E033,
+				C5058314A29FEE4669D5C402,
+			);
+			name = "App";
+			sourceTree = "<group>";
+		};
+		1AF8243C4F64B481769607AC = {
+			isa = PBXGroup;
+			children = (
+				219DDA2A2846AB06F6D64C26,
+				1B7DF3002875988717F3997A,
+				570BFA746A528D9003CF26E3,
+				CBF62D991F9619379BE73603,
+				CB34C3A8B5229DE8DDAEABB5,
+				805956139FDE3706B77D1C04,
+				A5F5562823C7A08020424485,
+				EEAF8E4221FEF4862C45B059,
+				D2597CCE97E12C6193467EEE,
+				BAFDF90D09A0F01E8F3B939F,
+				18F4C406FF3134E1E3C44557,
+			);
+			name = "RhythmWidgets";
+			sourceTree = "<group>";
+		};
+		460E70B3EE600D4034BDE49B = {
+			isa = PBXGroup;
+			children = (
+				74778019AF182848D78BE7C6,
+			);
+			name = "Onboarding";
+			sourceTree = "<group>";
+		};
+		477F0F2670272584DB099294 = {
+			isa = PBXGroup;
+			children = (
+				E2BD6FEECEFA6D36B1D966C5,
+				1B75CC2AD01DC9DFC4079D08,
+				69719EF043F2448791E6FD4B,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		47D023A8BDF8C59204B87D89 = {
+			isa = PBXGroup;
+			children = (
+				4673D2BCB5D43E6F966F8A37,
+				46837132290AA8A76076FD6A,
+				C2A6B13311F47B30F27C5BE0,
+			);
+			name = "Today";
+			sourceTree = "<group>";
+		};
+		4F6A0674F338CB0AFD6BD0C6 = {
+			isa = PBXGroup;
+			children = (
+				DD7DC6CCF1DFA1E970E09690,
+			);
+			name = "Resources";
+			sourceTree = "<group>";
+		};
+		5280480BD5DC2DDDC12B54C6 = {
+			isa = PBXGroup;
+			children = (
+				89A72D6E6E15E4CCF4FF4086,
+				D8F0EEF2917CC5693EC4BF86,
+			);
+			name = "Balance";
+			sourceTree = "<group>";
+		};
+		52EAB43F474862082DF95BB7 = {
+			isa = PBXGroup;
+			children = (
+				AD4DC4FE0C936BDB24DDF3D0,
+				FF7304BE54ADD40BDC79E1D9,
+				C5185B59039FA216F9AA3105,
+				CD24682AB4AA65C2D0E580F8,
+				EF28FA32B384ACC34BCCF467,
+				0FF73D036C01B3D329061331,
+			);
+			name = "Core";
+			sourceTree = "<group>";
+		};
+		5C23E8C34343D672EAB04A5B = {
+			isa = PBXGroup;
+			children = (
+				3ABDFFA73886821017560B3F,
+			);
+			name = "Plan";
+			sourceTree = "<group>";
+		};
+		5F54325ABCD3EEAC28067D29 = {
+			isa = PBXGroup;
+			children = (
+				11C8B12AA3F37713F9393D60,
+				571A0CB591F8D6D00667857D,
+			);
+			name = "Intents";
+			sourceTree = "<group>";
+		};
+		7741F1DBB9BBCC13DA0EEF07 = {
+			isa = PBXGroup;
+			children = (
+				33162C39A8CC623C7E9C29DE,
+			);
+			name = "Shutdown";
+			sourceTree = "<group>";
+		};
+		83E0A07239B66D7A64A59B8C = {
+			isa = PBXGroup;
+			children = (
+				DA9CFA223D7750A64299F2CD,
+			);
+			name = "CalendarReview";
+			sourceTree = "<group>";
+		};
+		8AA8E5AB80B2A96E4261A1BE = {
+			isa = PBXGroup;
+			children = (
+				E110C97738185E06F9201013,
+			);
+			name = "Settings";
+			sourceTree = "<group>";
+		};
+		90835EEA78FA44F2E08D3B50 = {
+			isa = PBXGroup;
+			children = (
+				9DCA2224C269736C6B2A9EE3,
+				3A8127CABB86007B8A07FDA2,
+				52B0313036A76DBC05071425,
+			);
+			name = "RhythmTests";
+			sourceTree = "<group>";
+		};
+		AD4DC4FE0C936BDB24DDF3D0 = {
+			isa = PBXGroup;
+			children = (
+				6A6FEAE49B59F83E015F1589,
+				37E313BC3D42B456A157CB55,
+				EDE531BD9CBF09C37232B364,
+			);
+			name = "DesignSystem";
+			sourceTree = "<group>";
+		};
+		C5185B59039FA216F9AA3105 = {
+			isa = PBXGroup;
+			children = (
+				C5C478A248C91938F1F04B7E,
+			);
+			name = "Extensions";
+			sourceTree = "<group>";
+		};
+		CD24682AB4AA65C2D0E580F8 = {
+			isa = PBXGroup;
+			children = (
+				C218E1862D74304785502142,
+				FDB599CB3DA2E4B3EAF7B51F,
+				6A2EEE9A03777079F6439445,
+				0D868771AAB433563F65DA34,
+				C8FA3C714334E0492E0D0081,
+			);
+			name = "Models";
+			sourceTree = "<group>";
+		};
+		CD7922D84B090A2FC2B69DB0 = {
+			isa = PBXGroup;
+			children = (
+				5280480BD5DC2DDDC12B54C6,
+				83E0A07239B66D7A64A59B8C,
+				460E70B3EE600D4034BDE49B,
+				5C23E8C34343D672EAB04A5B,
+				EDAFFFEE49AC14F52C186DE5,
+				8AA8E5AB80B2A96E4261A1BE,
+				7741F1DBB9BBCC13DA0EEF07,
+				47D023A8BDF8C59204B87D89,
+			);
+			name = "Features";
+			sourceTree = "<group>";
+		};
+		D4C87EF4406C3700758F5B35 = {
+			isa = PBXGroup;
+			children = (
+				1011CA4B5826768BE1A85B6C,
+				52EAB43F474862082DF95BB7,
+				CD7922D84B090A2FC2B69DB0,
+				5F54325ABCD3EEAC28067D29,
+				4F6A0674F338CB0AFD6BD0C6,
+			);
+			name = "Rhythm";
+			sourceTree = "<group>";
+		};
+		E8FAF54E2A9594EB50ED978A = {
+			isa = PBXGroup;
+			children = (
+				D4C87EF4406C3700758F5B35,
+				1AF8243C4F64B481769607AC,
+				90835EEA78FA44F2E08D3B50,
+				477F0F2670272584DB099294,
+			);
+			name = "";
+			sourceTree = "<group>";
+		};
+		EDAFFFEE49AC14F52C186DE5 = {
+			isa = PBXGroup;
+			children = (
+				FAC32DA7A715E6C20D5ED9F5,
+				66993C5CB384567AE5FF0FAD,
+			);
+			name = "Rituals";
+			sourceTree = "<group>";
+		};
+		EF28FA32B384ACC34BCCF467 = {
+			isa = PBXGroup;
+			children = (
+				9315A624C07313CF55D57B2E,
+				1273B77485E5D629151478AB,
+				F0C5E1A813E4868DE837D24B,
+				E1572D9A973D3974697551A5,
+				59F9FE036C8A6784CA7E57B6,
+			);
+			name = "Services";
+			sourceTree = "<group>";
+		};
+		FF7304BE54ADD40BDC79E1D9 = {
+			isa = PBXGroup;
+			children = (
+				47B30995471BAF890428E055,
+				01216EDE74B9E86E1F8A218E,
+				EC936D89A4620EC644FDC726,
+			);
+			name = "Engine";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		62D84BEFF369E6174B2CF68E = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2057482F050904B8FDD51A32;
+			buildPhases = (
+				BDAFB1BE8639C9B232B19DCE,
+				1584B61B3FD096B735E4A97A,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				09CC01CC191984688B737DF9,
+			);
+			name = "RhythmTests";
+			productName = "RhythmTests";
+			productReference = 69719EF043F2448791E6FD4B;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9E240BC9BA66686BA6BFCCE7 = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5480FFFA3936C8B4998589B2;
+			buildPhases = (
+				F3830723097C871274A2CD08,
+				C0CB685E9A122BAF9005FC12,
+				78D512B72DCC2DB75A603D82,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RhythmWidgets";
+			productName = "RhythmWidgets";
+			productReference = 1B75CC2AD01DC9DFC4079D08;
+			productType = "com.apple.product-type.app-extension";
+		};
+		A4B57E2A2DEDC78C4CE11B0D = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D623DBF6EE6276A6F505D8F;
+			buildPhases = (
+				E0AE62408C80A36B6D4880E3,
+				6B80EA286EE6B6CB5B72E991,
+				F7399855B15F006585E7E4B3,
+				4F25D6885297DAF6AD504418,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99EBA6E226FEF358A580FB3F,
+			);
+			name = "Rhythm";
+			productName = "Rhythm";
+			productReference = E2BD6FEECEFA6D36B1D966C5;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1F8AA094B4B4949139D67B1 = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					A4B57E2A2DEDC78C4CE11B0D = {CreatedOnToolsVersion = 16.2;};
+					9E240BC9BA66686BA6BFCCE7 = {CreatedOnToolsVersion = 16.2;};
+					62D84BEFF369E6174B2CF68E = {CreatedOnToolsVersion = 16.2; TestTargetID = A4B57E2A2DEDC78C4CE11B0D;};
+				};
+			};
+			buildConfigurationList = 3FA660FADA79A9CE1400F480;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8FAF54E2A9594EB50ED978A;
+			productRefGroup = 477F0F2670272584DB099294;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4B57E2A2DEDC78C4CE11B0D,
+				9E240BC9BA66686BA6BFCCE7,
+				62D84BEFF369E6174B2CF68E,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78D512B72DCC2DB75A603D82 = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				205F6A1BDA95FC1852229188,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7399855B15F006585E7E4B3 = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D204D76E13F099FB3130E441,
+				7C4DD5A9EF96839A0862372A,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BDAFB1BE8639C9B232B19DCE = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24EFD94187D201849244CBFD,
+				282601C26E898EE8E78AAD1A,
+				964108C0DB09B8B77C31FE79,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0AE62408C80A36B6D4880E3 = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DC48C64EE1BFAC4444B0697,
+				BC50CA96D715CF033B2ADABF,
+				437A5B8406E3A6BA0A64644E,
+				16997ABBF7A557E872B652D8,
+				7B04BA02534CFACA6A9D6619,
+				8D9910E12B86DBA52CAB53DD,
+				8D1B4E52FBF229C2E87E8761,
+				F70E1E5AF99A7575D493DCC3,
+				2C2668C53DC31544AB2B9E4A,
+				D8D2DB6C09E779DB48C8F54F,
+				7B9CA9193451DEBC1DCE640F,
+				F808C4E9CA51F7B9CD132B8B,
+				9FD133A1DB8108C9C87DA3BC,
+				AB00F598411A8405F5FAC1B4,
+				43AF487EA061BEEAC41E5218,
+				DBCDC68ADA205F524DAEE05A,
+				4462B2DFF5DE9AC917330350,
+				412F04F8074BCC03864C5886,
+				C4CB1DB816D144CE5A66D1C4,
+				5250C7AF735CFA82502800AD,
+				C698D2DA7668794C67217612,
+				AE064EAD9862C80745EA82B4,
+				53C59048B7455C6760FA1BBF,
+				3A47771AF9D144DE736B743E,
+				841E3F2C51392F26DDD6929C,
+				49AA564EA779FCC10010E9EA,
+				76B99542E4CF973C8580F600,
+				8971A6C4389C48A9D5A77A24,
+				33BED993F736461A876FC371,
+				D76C000A1267A310802ED1E0,
+				0DA229B962F8A31F7D944313,
+				533A6B0A5187C435AB0FF0C7,
+				D07217E8E3CB2C3D04CF65AF,
+				CCB1E06BEB53451FA307516D,
+				A025EA51C5D307CDA2F07DBF,
+				5E2464D7103BE374893D0599,
+				90B60B24E2723089D0A6BC17,
+				AE11886F968095F57115E344,
+				219654C6EB66A260AAD59BEF,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3830723097C871274A2CD08 = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6528D87CFFB8003233BD9243,
+				D53B19F73167E16F1A8B63BE,
+				8DFC791B7C3D48CB5ECC5E82,
+				94CA3060E03AA9145EB3ACDB,
+				A86638F6061297B3F9D50143,
+				29506A51EE34EDEC56F515E8,
+				6AD7BA7BA6084CFB0F931B68,
+				D91F5D68103260F960EC7112,
+				10DDB3706740C87EA39F3145,
+				7A5E0D0ECBCBDD1D02D51463,
+				0B79152E93BABC796641D416,
+				C3D5E39084693623A05343BE,
+				16FF2BF3F4AEFE571AADCCCC,
+				81012999B8156C27921C3327,
+				5E0660FCF5748FD0EFFD88D8,
+				D8D6D6A6AA4358F512F4C267,
+				5AFD3B2DB036FF1AC5C330F3,
+				FDF03F13A8B5C47029910AE7,
+				8ED57C47B78B31225BD01DF4,
+				57B967DF347151EEB1262F30,
+				6462FA369A6D7631B7E341EF,
+				EA8064CD958E3435CF02A0FE,
+				4ADDC999C90EB3174042622A,
+				63E1D181336142CC0A55D5C9,
+				096F735BEBD05FAAC74F064E,
+				266B8713BE9BE3976498A2D4,
+				C35C7A83924FB2EE803F3CD6,
+				5AC76A5D7294959C51A3FC1E,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		09CC01CC191984688B737DF9 = {
+			isa = PBXTargetDependency;
+			target = A4B57E2A2DEDC78C4CE11B0D;
+			targetProxy = D66274F0EF9FB3AA371D5422;
+		};
+		99EBA6E226FEF358A580FB3F = {
+			isa = PBXTargetDependency;
+			target = 9E240BC9BA66686BA6BFCCE7;
+			targetProxy = 59108C4E0872B40CE1B2D9BB;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		007251CF9A56378B28103987 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "RhythmWidgets/RhythmWidgets.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "RhythmWidgets/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Rhythm;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhythm.app.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0D0EF126391ECA25FCC9F4F8 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhythm.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rhythm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rhythm";
+			};
+			name = Debug;
+		};
+		165BFD51F057D468BBFA1040 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "RhythmWidgets/RhythmWidgets.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "RhythmWidgets/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Rhythm;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhythm.app.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		1718AAF4E5CB68E01B8646DA = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				MARKETING_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		33463152ED1CFFD4190C6F38 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				MARKETING_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A667A5DCF00157E154976C42 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Rhythm/App/Rhythm.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Rhythm/App/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhythm.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		BAE8DEB53CB8214A2FD1F57F = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhythm.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rhythm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rhythm";
+			};
+			name = Release;
+		};
+		E05252BD554B415D661AE24E = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Rhythm/App/Rhythm.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Rhythm/App/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhythm.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D623DBF6EE6276A6F505D8F = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A667A5DCF00157E154976C42,
+				E05252BD554B415D661AE24E,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2057482F050904B8FDD51A32 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D0EF126391ECA25FCC9F4F8,
+				BAE8DEB53CB8214A2FD1F57F,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FA660FADA79A9CE1400F480 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1718AAF4E5CB68E01B8646DA,
+				33463152ED1CFFD4190C6F38,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5480FFFA3936C8B4998589B2 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				007251CF9A56378B28103987,
+				165BFD51F057D468BBFA1040,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1F8AA094B4B4949139D67B1;
+}

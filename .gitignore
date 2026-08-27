@@ -1,0 +1,32 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xcuserdatad/
+xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Xcode writes these into the checked-in project; the shared scheme is generated.
+Rhythm.xcodeproj/xcuserdata/
+Rhythm.xcodeproj/project.xcworkspace/xcuserdata/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Signing material — never commit these
+*.mobileprovision
+*.p12
+*.p8
+*.cer
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
