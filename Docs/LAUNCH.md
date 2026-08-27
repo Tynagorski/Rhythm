@@ -39,51 +39,47 @@ before the App Store version is worth anyone's time.
 ## The website is already live-able
 
 `web/` is a real static site and `.github/workflows/pages.yml` deploys it on
-every push. **But there is a blocker worth knowing before you try:**
+every push.
 
-> **This repository is private, and GitHub Pages on a private repository requires
-> GitHub Pro or higher.** On a free personal account, Pages only works for public
-> repositories. The deploy workflow probes for this and skips with a notice
-> rather than failing, so CI stays green either way.
+**The plan is to make this repository public**, which is what GitHub Pages needs
+on a free account. Until that happens the deploy workflow probes the Pages API,
+gets a 403, and skips with a notice rather than failing — so CI stays green
+either way.
 
-You have three ways through it, and the right one is a business decision rather
-than a technical one:
+### Turning it on
 
-| Option | Cost | Trade-off |
-|---|---|---|
-| **Make the repo public** | Free | The whole app source becomes public — including the scoring engine, which is the actual idea |
-| **GitHub Pro** | $4/mo | Repo stays private; Pages works. Make sure the site's visibility is set to public, or search engines cannot index it |
-| **Host `web/` elsewhere** | Free | Cloudflare Pages, Netlify and Vercel all deploy a public site from a *private* GitHub repo. Best of both, and a stronger CDN than Pages |
+1. **Settings → General → scroll to Danger Zone → Change visibility → Make
+   public.** GitHub asks you to type the repository name to confirm.
+2. **Actions → Deploy site → Run workflow.** The preflight step enables Pages
+   over the API automatically once the plan allows it, so there is no second
+   setting to find.
+3. The site is at `https://tynagorski.github.io/Rhythm/` about a minute later.
 
-**For the SEO goal specifically, option 3 is the one I would pick.** It keeps the
-source private, gives you a public indexable site, and none of those hosts charge
-for this. Point them at the `web/` directory as the publish root — there is no
-build command, it is plain static files.
-
-If you do enable Pages, the workflow enables it via the API automatically on the
-next push, and the site lands at `https://tynagorski.github.io/Rhythm/`.
-
-The workflow deploys from `main` **and** from the feature branch, so the site can
-go up before the app PR merges. Once it merges, trim the branch list in
+The workflow deploys from `main` **and** from the feature branch, so the site
+goes up before the app PR merges. Once it merges, trim the branch list in
 `pages.yml` to `main`.
 
-Whichever host you choose, **a search engine cannot index a page it cannot
-reach** — verify the deployed URL loads in a private browser window before
-spending any effort on SEO.
+### Before you make it public
 
-What the site already does:
+The repository has been checked for secrets, signing material and credential
+files — there are none, and `.gitignore` already excludes `.p8`, `.p12`, `.cer`
+and `.mobileprovision`. Two things are still worth knowing:
 
-- Landing page with a working demo of the balance score — visitors can toggle
-  the five domains and watch coverage collapse to 16 while the score stays at 82.
-  That contradiction is the product's argument, and it is the most shareable
-  thing here.
-- `/privacy/` and `/support/` — **these unblock App Store submission.** Apple
-  requires both URLs to resolve, and placeholder links are the single most common
-  cause of a first-submission rejection.
-- `og.png`, structured data (`SoftwareApplication` + two `FAQPage` blocks),
-  canonical tags, `robots.txt`, `sitemap.xml`.
-- `Scripts/check_site.py` fails the build on a broken canonical, an invalid
-  JSON-LD block, a dead internal link or a sitemap that has drifted.
+- **Your commit metadata becomes public**, including the author email address on
+  every commit. If you would rather not have it scraped, set GitHub → Settings →
+  Emails → *Keep my email address private*, and use the `@users.noreply.github.com`
+  address it gives you for future commits. Existing commits keep the old address
+  unless the history is rewritten.
+- **The scoring engine is the idea**, and it will be readable. That is a real
+  trade — it is also the thing that makes a Show HN or a build-in-public thread
+  work, so it can cut in your favour.
+
+### If you change your mind later
+
+Making a repository private again is a single setting, but anything already
+cloned or forked stays cloned. The alternative that avoids the trade entirely is
+Cloudflare Pages or Netlify: both deploy a public site from a *private* repo for
+free, with `web/` as the publish root and no build command.
 
 ## SEO: what will and will not work
 
@@ -171,9 +167,10 @@ on any of the above.
 
 ## Order of operations
 
-- [ ] Decide how the site gets hosted: make the repo public, buy GitHub Pro, or
-      point Cloudflare Pages / Netlify at `web/` from the private repo. Verify the
-      URL loads in a private window
+- [ ] Make the repository public (Settings → General → Danger Zone), then run
+      the Deploy site workflow. Verify the URL loads in a private window
+- [ ] Consider switching to a `noreply` commit email first, if you would rather
+      your address not be public
 - [ ] Buy a domain and add `web/CNAME`; update `BASE` in
       `Scripts/build_doc_pages.py`, `Scripts/check_site.py`, the canonical tags
       and `SettingsView`
