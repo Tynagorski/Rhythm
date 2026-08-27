@@ -108,6 +108,30 @@ page ranks for two or three phrases; twenty honest articles rank for hundreds.
 If you want compounding search traffic, that is the actual work — one piece a
 week, each answering one question completely.
 
+**`robots.txt` does nothing on a project site.** Crawlers only read it at the
+domain root — `tynagorski.github.io/robots.txt` — and that root belongs to your
+GitHub user page, not this repository. The file at `/Rhythm/robots.txt` is
+ignored. It becomes live the moment you move to a custom domain, so it stays in
+`web/`, but until then do not rely on it.
+
+What *does* work regardless: the `<meta name="robots" content="index, follow">`
+tag on every page, and submitting the sitemap directly.
+
+**Submit the sitemap by hand — this is the fastest legitimate way to get
+indexed.** Nothing else on this list moves as quickly:
+
+1. [Google Search Console](https://search.google.com/search-console) → add
+   property → **URL prefix** → `https://tynagorski.github.io/Rhythm/`
+2. Verify by HTML tag: it gives you a `<meta name="google-site-verification">`
+   line to paste into `<head>` in `web/index.html`, then redeploy
+3. Sitemaps → submit `https://tynagorski.github.io/Rhythm/sitemap.xml`
+4. URL Inspection → paste the homepage → **Request indexing**
+5. Repeat 1–4 at [Bing Webmaster Tools](https://www.bing.com/webmasters), which
+   also feeds DuckDuckGo
+
+Indexing typically lands within a few days rather than the weeks it takes if you
+just wait to be discovered. Do this the day the site goes live.
+
 **The App Store is a separate discipline.** App Store ranking is ASO, and Google
 SEO does almost nothing for it. What moves ASO:
 
@@ -165,6 +189,8 @@ on any of the above.
 - [x] Make the repository public
 - [ ] Enable Pages once: Settings → Pages → Source: GitHub Actions, then re-run
       the Deploy site workflow. Verify the URL loads in a private window
+- [ ] Google Search Console + Bing Webmaster Tools: verify, submit the sitemap,
+      request indexing. Same day the site goes live
 - [ ] Consider switching to a `noreply` commit email first, if you would rather
       your address not be public
 - [ ] Buy a domain and add `web/CNAME`; update `BASE` in
