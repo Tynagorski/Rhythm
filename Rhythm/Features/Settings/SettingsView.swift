@@ -102,8 +102,8 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    Link("Privacy policy", destination: URL(string: "https://rhythm.app/privacy")!)
-                    Link("Support", destination: URL(string: "https://rhythm.app/support")!)
+                    Link("Privacy policy", destination: URL(string: "https://tynagorski.github.io/Rhythm/privacy/")!)
+                    Link("Support", destination: URL(string: "https://tynagorski.github.io/Rhythm/support/")!)
                     LabeledContent("Version", value: Self.versionString)
                 } header: {
                     Text("About")

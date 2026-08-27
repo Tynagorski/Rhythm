@@ -18,8 +18,12 @@ empty store.
 | `com.rhythm.app.widgets` | widget target `PRODUCT_BUNDLE_IDENTIFIER` | `<your bundle ID>.widgets` |
 | `com.rhythm.app.tests` | test target | `<your bundle ID>.tests` |
 | `group.com.rhythm.app` | `AppGroup.identifier`, both `.entitlements` files | `group.<your bundle ID>` |
-| `https://rhythm.app/privacy` | `SettingsView` | your published policy URL |
-| `https://rhythm.app/support` | `SettingsView` | your support URL |
+| `https://tynagorski.github.io/Rhythm/privacy/` | `SettingsView` | your policy URL, if you move off GitHub Pages |
+| `https://tynagorski.github.io/Rhythm/support/` | `SettingsView` | your support URL, if you move off GitHub Pages |
+
+The privacy and support pages are real and deployed from `web/` — see
+`Docs/LAUNCH.md`. They only need changing if you move the site to a custom
+domain.
 
 The bundle identifiers live in `Scripts/generate_xcodeproj.py` (`BUNDLE_ID`,
 `APP_GROUP`). Change them there and regenerate rather than editing the project

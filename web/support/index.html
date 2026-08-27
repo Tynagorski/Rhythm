@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Rhythm</title>
+<meta name="description" content="Help with Rhythm: empty widgets, calendar access, streaks, the balance score, bug reports and feature requests.">
+<link rel="canonical" href="https://tynagorski.github.io/Rhythm/support/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0B0C0F" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F6F6F4" media="(prefers-color-scheme: light)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rhythm">
+<meta property="og:title" content="Support — Rhythm">
+<meta property="og:description" content="Help with Rhythm: empty widgets, calendar access, streaks, the balance score, bug reports and feature requests.">
+<meta property="og:url" content="https://tynagorski.github.io/Rhythm/support/">
+<meta property="og:image" content="https://tynagorski.github.io/Rhythm/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Why are my Rhythm widgets empty?","acceptedAnswer":{"@type":"Answer","text":"An empty widget almost always means the App Group is misconfigured, so the app and the widget are reading different containers. Check that the group identifier matches in AppGroup.swift and both entitlements files, and that the group is enabled on both App IDs."}},
+{"@type":"Question","name":"Why is Rhythm not seeing my calendar?","acceptedAnswer":{"@type":"Answer","text":"Rhythm needs full calendar access rather than write-only access, because the feature reads events that already exist. Check Settings, Privacy and Security, Calendars, Rhythm. Also confirm the calendar you expect is selected in Rhythm's own calendar list."}},
+{"@type":"Question","name":"Why did the calendar reminder stop appearing?","acceptedAnswer":{"@type":"Answer","text":"By design. The nudge fires once you pass your review interval and escalates for three days, then stops. Reviewing the week ahead resets the clock."}},
+{"@type":"Question","name":"Why did my balance score drop on a productive day?","acceptedAnswer":{"@type":"Answer","text":"Execution is only 30 percent of the score. A day where everything got finished but nothing outside work was touched scores well on execution and badly on coverage, and badly on protection too if meetings filled the day."}}
+]}
+</script>
+<style>/* ---- Tokens: bare :root is the complete light palette ---- */
+:root {
+  --ground:        #F6F6F4;
+  --surface:       #FFFFFF;
+  --raised:        #FBFBFA;
+  --hairline:      #E3E3DF;
+  --hairline-soft: #EDEDE9;
+
+  --ink:      #101114;
+  --ink-2:    #5A5F6A;
+  --ink-3:    #8B909B;
+
+  --accent:      #4257D0;
+  --accent-ink:  #FFFFFF;
+  --accent-wash: rgba(66, 87, 208, 0.08);
+
+  --d-business:      #4257D0;
+  --d-body:          #17914A;
+  --d-mind:          #B31FA8;
+  --d-relationships: #B06A00;
+  --d-recovery:      #0E93C4;
+
+  --positive: #0E9F6E;
+  --caution:  #B58900;
+  --critical: #DC2626;
+
+  --shadow: 0 1px 2px rgba(16, 17, 20, .05), 0 8px 24px rgba(16, 17, 20, .05);
+
+  --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --measure: 34rem;
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:        #0B0C0F;
+    --surface:       #15171C;
+    --raised:        #1D2027;
+    --hairline:      #2A2E37;
+    --hairline-soft: #21242B;
+
+    --ink:   #F5F6F8;
+    --ink-2: #9AA1AE;
+    --ink-3: #6B7280;
+
+    --accent:      #5C77FC;
+    --accent-ink:  #0B0C0F;
+    --accent-wash: rgba(92, 119, 252, 0.12);
+
+    --d-business:      #5C77FC;
+    --d-body:          #0BA05D;
+    --d-mind:          #D546B8;
+    --d-relationships: #CA6E03;
+    --d-recovery:      #1187A8;
+
+    --positive: #0FA271;
+    --caution:  #BC8A0E;
+    --critical: #DE4F4F;
+
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px rgba(0, 0, 0, .3);
+  }
+}
+
+:root[data-theme="dark"] {
+  --ground:        #0B0C0F;
+  --surface:       #15171C;
+  --raised:        #1D2027;
+  --hairline:      #2A2E37;
+  --hairline-soft: #21242B;
+
+  --ink:   #F5F6F8;
+  --ink-2: #9AA1AE;
+  --ink-3: #6B7280;
+
+  --accent:      #5C77FC;
+  --accent-ink:  #0B0C0F;
+  --accent-wash: rgba(92, 119, 252, 0.12);
+
+  --d-business:      #5C77FC;
+  --d-body:          #0BA05D;
+  --d-mind:          #D546B8;
+  --d-relationships: #CA6E03;
+  --d-recovery:      #1187A8;
+
+  --positive: #0FA271;
+  --caution:  #BC8A0E;
+  --critical: #DE4F4F;
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px rgba(0, 0, 0, .3);
+}
+
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--sans);
+       font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+.wrap { max-width: 44rem; margin-inline: auto; padding-inline: var(--gutter); }
+header.doc { border-bottom: 1px solid var(--hairline); padding-block: .85rem;
+             margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+.doc-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.wordmark { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--mono);
+            font-weight: 600; font-size: .95rem; letter-spacing: .04em;
+            text-decoration: none; color: var(--ink); }
+.doc-inner nav { display: flex; gap: 1.25rem; font-size: .88rem; }
+.doc-inner nav a { color: var(--ink-2); text-decoration: none; }
+.doc-inner nav a:hover { color: var(--ink); }
+.eyebrow { font-family: var(--mono); font-size: .72rem; font-weight: 500; letter-spacing: .14em;
+           text-transform: uppercase; color: var(--ink-3); margin: 0; }
+h1 { font-family: var(--display); font-optical-sizing: auto; font-weight: 300;
+     font-size: clamp(2rem, 5vw, 3rem); line-height: 1.08; letter-spacing: -.025em;
+     text-wrap: balance; margin: .9rem 0 1.25rem; }
+h2 { font-family: var(--display); font-optical-sizing: auto; font-weight: 500; font-size: 1.4rem;
+     line-height: 1.2; letter-spacing: -.012em; text-wrap: balance; margin: 2.75rem 0 .85rem; }
+h3 { font-size: 1rem; font-weight: 600; margin: 1.75rem 0 .5rem; color: var(--ink); }
+p, li { color: var(--ink-2); }
+p { margin: 0 0 1rem; }
+strong { color: var(--ink); font-weight: 600; }
+ul { padding-left: 1.15rem; margin: 0 0 1rem; }
+li { margin-bottom: .45rem; }
+.lede { font-size: 1.1rem; }
+.callout { background: var(--surface); border: 1px solid var(--hairline);
+           border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0;
+           padding: 1.15rem 1.35rem; margin: 1.75rem 0; }
+.callout p:last-child { margin-bottom: 0; }
+.meta { font-family: var(--mono); font-size: .74rem; letter-spacing: .04em;
+        color: var(--ink-3); margin-bottom: 2rem; }
+details { border-top: 1px solid var(--hairline); padding-block: 1.1rem; }
+details:last-of-type { border-bottom: 1px solid var(--hairline); margin-bottom: 1.5rem; }
+summary { cursor: pointer; font-weight: 500; color: var(--ink); list-style: none; display: flex;
+          justify-content: space-between; gap: 1rem; align-items: baseline; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-family: var(--mono); color: var(--ink-3); flex: none; }
+details[open] summary::after { content: "\2013"; }
+details p { margin-top: .75rem; font-size: .96rem; }
+footer.doc { border-top: 1px solid var(--hairline); margin-top: clamp(3rem, 7vw, 5rem);
+             padding-block: 2rem 3rem; font-size: .86rem; color: var(--ink-3);
+             display: flex; flex-wrap: wrap; gap: 1rem 1.75rem; justify-content: space-between; }
+footer.doc a { color: var(--ink-2); text-decoration: none; }
+footer.doc a:hover { color: var(--ink); text-decoration: underline; }
+footer.doc nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .001ms !important; }
+}
+</style>
+</head>
+<body>
+<header class="doc">
+  <div class="wrap doc-inner">
+    <a class="wordmark" href="../"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="none" stroke="currentColor" stroke-opacity=".25" stroke-width="2.5"></circle><path d="M11 2a9 9 0 0 1 7.6 13.8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path><path d="M8 8.2v5.6M11 6.6v8.8M14 8.2v5.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>Rhythm</a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../support/">Support</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<p class="eyebrow">Support</p>
+<h1>Help with Rhythm</h1>
+<p class="meta">Response within two business days</p>
+
+<p class="lede">Rhythm is a small app with a narrow job, so most questions have short answers.
+If yours is not here, write to <a href="mailto:hello@example.com">hello@example.com</a> and
+include your iOS version and what you were doing when it went wrong.</p>
+
+<h2>Common questions</h2>
+
+<details open>
+  <summary>My widgets are empty even though the app has data</summary>
+  <p>This almost always means the App Group is misconfigured — the app and the widget are
+  reading different containers. If you built Rhythm yourself, check that the group identifier
+  matches in <code>AppGroup.swift</code> and in both entitlements files, and that the group is
+  enabled on both App IDs in the Developer portal.</p>
+</details>
+
+<details>
+  <summary>Rhythm is not seeing my calendar</summary>
+  <p>Rhythm needs full calendar access, not write-only access, because the whole feature is
+  reading events that already exist. Check Settings → Privacy &amp; Security → Calendars →
+  Rhythm. If you have narrowed the calendar list in Rhythm's own settings, confirm the calendar
+  you expect is selected — an empty selection means all calendars.</p>
+</details>
+
+<details>
+  <summary>The calendar nudge stopped appearing</summary>
+  <p>That is deliberate. The nudge fires when you pass your review interval and escalates for
+  three days, then stops. An alert that never stops is an alert you turn off. Reviewing the
+  week ahead resets the clock; the interval itself is in Settings → Calendar review.</p>
+</details>
+
+<details>
+  <summary>My ritual streak reset even though I kept it</summary>
+  <p>Streaks count consecutive <em>scheduled</em> days. A weekdays-only ritual steps over the
+  weekend rather than breaking, and a deliberate skip pauses the streak instead of ending it.
+  A silent miss on a scheduled day is what ends it.</p>
+</details>
+
+<details>
+  <summary>Why can I only set one keystone?</summary>
+  <p>Because two keystones is zero keystones. The cap is the feature. Setting a new keystone
+  demotes the old one to Momentum rather than deleting it.</p>
+</details>
+
+<details>
+  <summary>Why did my balance score go down on a productive day?</summary>
+  <p>Execution is only 30% of it. A day where you finished everything but touched nothing
+  outside work scores well on execution and badly on coverage — and if meetings ate the day,
+  badly on protection too. Open the Balance tab to see which of the four parts moved.</p>
+</details>
+
+<details>
+  <summary>Can I get my data out?</summary>
+  <p>Rhythm has no export yet. Your data is in your encrypted device backup. If export matters
+  to you, say so in an email — it is on the list, and demand decides the order.</p>
+</details>
+
+<details>
+  <summary>Does Rhythm work on iPad or Apple Watch?</summary>
+  <p>iPhone only for now. The project builds for iPad but the layouts are not designed for it,
+  and there is no watch app.</p>
+</details>
+
+<h2>Reporting a bug</h2>
+<p>Useful reports include your iOS version and iPhone model, what you expected versus what
+happened, and whether it reproduces. Screenshots of the Balance tab help for anything
+score-related.</p>
+<p>You can also open an issue on
+<a href="https://github.com/Tynagorski/Rhythm/issues">GitHub</a>, which is public.</p>
+
+<h2>Requesting a feature</h2>
+<p>Rhythm's job is narrow on purpose, so the honest answer to most feature requests is no. The
+ones that get built are the ones that make the existing job work better rather than adding a
+new one.</p>
+
+<div class="callout">
+  <p><strong>Before you publish this page:</strong> replace the contact address with a real
+  one. App Review checks that the support URL resolves and offers a genuine contact route.</p>
+</div>
+
+</main>
+<footer class="doc wrap">
+  <span>Rhythm — a daily planner for iOS.</span>
+  <nav>
+    <a href="../">Home</a>
+    <a href="../privacy/">Privacy</a>
+    <a href="../support/">Support</a>
+    <a href="https://github.com/Tynagorski/Rhythm">Source</a>
+  </nav>
+</footer>
+</body>
+</html>

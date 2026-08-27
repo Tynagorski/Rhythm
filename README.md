@@ -101,6 +101,26 @@ Two rules hold the structure together:
    Anything that touches `UIApplication` or EventKit stays in the app target;
    `Scripts/check_target_membership.py` enforces that.
 
+## The website
+
+`web/` is a static marketing site — landing page, privacy policy and support
+page — deployed to GitHub Pages by `.github/workflows/pages.yml`. Enable it under
+**Settings → Pages → Source: GitHub Actions** and it goes live at
+`https://tynagorski.github.io/Rhythm/`.
+
+The privacy and support pages are not decoration: App Store submission requires
+both URLs to resolve, and `SettingsView` links to them.
+
+```sh
+python3 Scripts/check_site.py            # metadata, structured data, links, sitemap
+python3 Scripts/build_doc_pages.py       # regenerate privacy + support after a palette change
+node Scripts/render_og_image.js          # regenerate the social card
+python3 Scripts/render_app_icon.py 1024 <path>   # regenerate any icon size
+```
+
+`Docs/LAUNCH.md` covers what actually has to happen to get the app in front of
+people, and is candid about which parts of that are not automatable.
+
 ## Building
 
 Requires Xcode 16 or later, iOS 17 deployment target.
@@ -121,10 +141,13 @@ python3 Scripts/generate_xcodeproj.py
 
 ### Checks that run without a Mac
 
+These run in CI on every push (`.github/workflows/checks.yml`):
+
 ```sh
 python3 Scripts/check_swift_syntax.py       # delimiters, string literals
 python3 Scripts/check_xcodeproj.py          # project integrity, target membership
 python3 Scripts/check_target_membership.py  # extension-safety of shared sources
+python3 Scripts/check_site.py               # site metadata and structured data
 ```
 
 These are a backstop, not a substitute for `xcodebuild`. Run the test suite on a
@@ -142,6 +165,8 @@ Calendar access is read-only. Both binaries ship a privacy manifest.
 
 ## Documentation
 
+- `Docs/LAUNCH.md` — getting it live: TestFlight, the site, SEO and ASO, and a
+  straight answer about "going viral"
 - `Docs/BUILD.md` — signing, capabilities, the identifiers to change
 - `Docs/APP_STORE.md` — submission checklist, listing copy, review notes
 - `Docs/PUSH_NOTIFICATIONS.md` — APNs payload contract and server requirements
