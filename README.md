@@ -106,9 +106,10 @@ Two rules hold the structure together:
 `web/` is a static marketing site — landing page, privacy policy and support
 page — deployed by `.github/workflows/pages.yml`.
 
-GitHub Pages needs a public repository on a free account. Until this one is
-public the workflow probes the Pages API, gets a 403, and skips with a notice
-rather than failing. `Docs/LAUNCH.md` has the steps and the alternatives.
+Pages has to be enabled once by hand — Settings → Pages → Source: GitHub
+Actions — because a workflow token can deploy to a Pages site but cannot create
+one. Until then the workflow skips with a notice rather than failing.
+`Docs/LAUNCH.md` has the steps.
 
 The privacy and support pages are not decoration: App Store submission requires
 both URLs to resolve, and `SettingsView` links to them.

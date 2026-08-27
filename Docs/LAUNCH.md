@@ -39,47 +39,42 @@ before the App Store version is worth anyone's time.
 ## The website is already live-able
 
 `web/` is a real static site and `.github/workflows/pages.yml` deploys it on
-every push.
+every push. The repository is public, so Pages is available and free.
 
-**The plan is to make this repository public**, which is what GitHub Pages needs
-on a free account. Until that happens the deploy workflow probes the Pages API,
-gets a 403, and skips with a notice rather than failing — so CI stays green
-either way.
+### One manual step, once
 
-### Turning it on
+A workflow's `GITHUB_TOKEN` can *deploy* to a Pages site but cannot *create*
+one — that needs repository admin rights, which Actions tokens are never given.
+So Pages has to be switched on by hand exactly once:
 
-1. **Settings → General → scroll to Danger Zone → Change visibility → Make
-   public.** GitHub asks you to type the repository name to confirm.
-2. **Actions → Deploy site → Run workflow.** The preflight step enables Pages
-   over the API automatically once the plan allows it, so there is no second
-   setting to find.
-3. The site is at `https://tynagorski.github.io/Rhythm/` about a minute later.
+**Settings → Pages → Build and deployment → Source: GitHub Actions.**
 
-The workflow deploys from `main` **and** from the feature branch, so the site
-goes up before the app PR merges. Once it merges, trim the branch list in
-`pages.yml` to `main`.
+Then re-run **Actions → Deploy site → Run workflow**. Every push after that
+deploys on its own; there is nothing else to click, ever.
 
-### Before you make it public
+Until that happens the workflow probes the Pages API, gets a 404, and skips with
+a notice naming the step — CI stays green either way.
 
-The repository has been checked for secrets, signing material and credential
-files — there are none, and `.gitignore` already excludes `.p8`, `.p12`, `.cer`
-and `.mobileprovision`. Two things are still worth knowing:
+The site lands at `https://tynagorski.github.io/Rhythm/` about a minute after the
+first successful run. The workflow deploys from `main` **and** from the feature
+branch, so it goes up before the app PR merges; trim the branch list in
+`pages.yml` to `main` once it has.
 
-- **Your commit metadata becomes public**, including the author email address on
-  every commit. If you would rather not have it scraped, set GitHub → Settings →
-  Emails → *Keep my email address private*, and use the `@users.noreply.github.com`
-  address it gives you for future commits. Existing commits keep the old address
-  unless the history is rewritten.
-- **The scoring engine is the idea**, and it will be readable. That is a real
-  trade — it is also the thing that makes a Show HN or a build-in-public thread
-  work, so it can cut in your favour.
+### Now that the repository is public
 
-### If you change your mind later
+The history was scanned before the switch: no keys, no tokens, no signing
+material, no credential files, and `.gitignore` already blocks `.p8`, `.p12`,
+`.cer` and `.mobileprovision`. One exposure remains:
 
-Making a repository private again is a single setting, but anything already
-cloned or forked stays cloned. The alternative that avoids the trade entirely is
-Cloudflare Pages or Netlify: both deploy a public site from a *private* repo for
-free, with `web/` as the publish root and no build command.
+- **Commit metadata is public**, including the author email on every commit. If
+  you would rather it not be scraped, set GitHub → Settings → Emails → *Keep my
+  email address private* and use the `@users.noreply.github.com` address for
+  future commits. Existing commits keep the old address unless history is
+  rewritten.
+
+If the source ever needs to go private again, Cloudflare Pages and Netlify both
+deploy a public site from a private repo for free — `web/` as the publish root,
+no build command.
 
 ## SEO: what will and will not work
 
@@ -167,7 +162,8 @@ on any of the above.
 
 ## Order of operations
 
-- [ ] Make the repository public (Settings → General → Danger Zone), then run
+- [x] Make the repository public
+- [ ] Enable Pages once: Settings → Pages → Source: GitHub Actions, then re-run
       the Deploy site workflow. Verify the URL loads in a private window
 - [ ] Consider switching to a `noreply` commit email first, if you would rather
       your address not be public

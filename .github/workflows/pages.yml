@@ -23,10 +23,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Whether Pages can be used at all is an account property, not something the
-  # code controls: a private repository needs a paid plan for it. Probe first
-  # and skip cleanly, so an unavailable Pages site reports as a notice rather
-  # than failing every push.
+  # Pages has to be switched on once by a human: the workflow's GITHUB_TOKEN can
+  # deploy to an existing Pages site but cannot create one, which needs repo
+  # admin rights it is never granted. So probe, and skip with instructions
+  # rather than failing every push until someone flips it.
   preflight:
     runs-on: ubuntu-latest
     outputs:
@@ -38,30 +38,22 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           set -uo pipefail
-          api="https://api.github.com/repos/$REPO/pages"
-          auth=(-H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json")
+          code=$(curl -sS -o /dev/null -w '%{http_code}' \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/$REPO/pages")
 
-          code=$(curl -sS -o /dev/null -w '%{http_code}' "${auth[@]}" "$api")
           if [ "$code" = "200" ]; then
             echo "enabled=true" >> "$GITHUB_OUTPUT"
-            echo "Pages is already enabled."
-            exit 0
-          fi
-
-          echo "Pages not configured (HTTP $code); attempting to enable it."
-          create=$(curl -sS -o /dev/null -w '%{http_code}' -X POST "${auth[@]}" \
-            "$api" -d '{"build_type":"workflow"}')
-          if [ "$create" = "201" ] || [ "$create" = "204" ]; then
-            echo "enabled=true" >> "$GITHUB_OUTPUT"
-            echo "Enabled Pages for this repository."
+            echo "Pages is enabled; continuing to build and deploy."
             exit 0
           fi
 
           echo "enabled=false" >> "$GITHUB_OUTPUT"
-          msg="Could not enable GitHub Pages (HTTP $create). Pages is free for public"
-          msg="$msg repositories; on a private one it needs GitHub Pro or higher. Make the"
-          msg="$msg repository public, upgrade the plan, or host web/ on Cloudflare Pages or"
-          msg="$msg Netlify instead - see Docs/LAUNCH.md. The site is fine; only publishing is blocked."
+          msg="GitHub Pages is not enabled for this repository (HTTP $code), and a"
+          msg="$msg workflow token cannot enable it. Turn it on once at Settings >"
+          msg="$msg Pages > Build and deployment > Source: GitHub Actions, then re-run"
+          msg="$msg this workflow. Every push after that deploys automatically."
           echo "::notice title=Site not deployed::$msg"
 
   build:
