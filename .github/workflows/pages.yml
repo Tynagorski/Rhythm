@@ -1,0 +1,83 @@
+name: Deploy site
+
+# Publishes web/ to GitHub Pages. The feature branch is included on purpose so
+# the site can go live before the app PR merges; trim this to `main` once it has.
+on:
+  push:
+    branches:
+      - main
+      - claude/professional-organizer-app-fhxozp
+    paths:
+      - "web/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never cancel a deploy midway; queue instead.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # Pages has to be switched on once by a human: the workflow's GITHUB_TOKEN can
+  # deploy to an existing Pages site but cannot create one, which needs repo
+  # admin rights it is never granted. So probe, and skip with instructions
+  # rather than failing every push until someone flips it.
+  preflight:
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.probe.outputs.enabled }}
+    steps:
+      - id: probe
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -uo pipefail
+          code=$(curl -sS -o /dev/null -w '%{http_code}' \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/$REPO/pages")
+
+          if [ "$code" = "200" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            echo "Pages is enabled; continuing to build and deploy."
+            exit 0
+          fi
+
+          echo "enabled=false" >> "$GITHUB_OUTPUT"
+          msg="GitHub Pages is not enabled for this repository (HTTP $code), and a"
+          msg="$msg workflow token cannot enable it. Turn it on once at Settings >"
+          msg="$msg Pages > Build and deployment > Source: GitHub Actions, then re-run"
+          msg="$msg this workflow. Every push after that deploys automatically."
+          echo "::notice title=Site not deployed::$msg"
+
+  build:
+    needs: preflight
+    if: needs.preflight.outputs.enabled == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Check every page parses and carries its metadata
+        run: python3 Scripts/check_site.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

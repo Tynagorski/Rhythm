@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rhythm — Daily Planner &amp; Work-Life Balance App for Professionals</title>
+<meta name="description" content="An iOS planner for busy professionals: one keystone a day, habits across five life domains, interactive widgets, and a calendar audit every few days.">
+<link rel="canonical" href="https://tynagorski.github.io/Rhythm/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0B0C0F" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F6F6F4" media="(prefers-color-scheme: light)">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rhythm">
+<meta property="og:title" content="Rhythm — the planner that makes you keep your calendar honest">
+<meta property="og:description" content="One keystone a day. Five life domains. A calendar audit every few days. An iOS planner for people whose calendars run their lives.">
+<meta property="og:url" content="https://tynagorski.github.io/Rhythm/">
+<meta property="og:image" content="https://tynagorski.github.io/Rhythm/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Rhythm — a balance ring reading 82 out of 100 beside five life-domain bars.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rhythm — the planner that makes you keep your calendar honest">
+<meta name="twitter:description" content="One keystone a day. Five life domains. A calendar audit every few days.">
+<meta name="twitter:image" content="https://tynagorski.github.io/Rhythm/og.png">
+
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,500&display=swap">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Rhythm",
+      "applicationCategory": "ProductivityApplication",
+      "applicationSubCategory": "Daily planner and habit tracker",
+      "operatingSystem": "iOS 17.0 or later",
+      "url": "https://tynagorski.github.io/Rhythm/",
+      "description": "An iOS daily planner for busy professionals. One keystone a day, rituals across five life domains, home screen and Lock Screen widgets, and a recurring calendar audit that flags conflicts, unanswered invites and days with no room to think.",
+      "featureList": [
+        "One keystone and three momentum tasks a day",
+        "Calendar audit for conflicts, unanswered invites and after-hours work",
+        "Habit tracking across business, body, mind, relationships and recovery",
+        "Work-life balance score with a full breakdown",
+        "Interactive home screen and Lock Screen widgets",
+        "Local notifications that work offline",
+        "Siri and Shortcuts support"
+      ],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "isAccessibleForFree": true,
+      "privacyPolicy": "https://tynagorski.github.io/Rhythm/privacy/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is there an app that reminds you to update your calendar?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Rhythm tracks how long it has been since you last reviewed the week ahead. Once you pass your chosen interval — three days by default — it starts nudging, and the nudge escalates for three days before it stops. The review itself shows you conflicts, unanswered invites, days booked past your hard stop and weekdays with nothing on them at all." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Rhythm change my calendar events?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Rhythm has read-only calendar access and there is no write path anywhere in the app. It reads existing events, analyses them on device, and tells you what to fix. You make the change in your own calendar app." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a work-life balance score?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In Rhythm it is a 0–100 daily number built from four measured parts: weighted completion of what you committed to (30%), rituals kept versus due (25%), how many of five life domains the day actually touched (25%), and whether your boundaries held (20%). The breakdown is always shown alongside the number, because a single opaque score is something to game rather than act on." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Rhythm have home screen widgets?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Five of them. Today, Rituals and Balance are interactive — tapping a ritual on the home screen marks it kept without opening the app. There is also a Calendar integrity widget showing days since your last review, and Lock Screen and StandBy complications." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Rhythm need an account or an internet connection?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Neither. There is no sign-in, no cloud sync and no analytics. Every notification is scheduled on device, so the whole daily loop works in airplane mode." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Rhythm different from a to-do list?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A to-do list measures how much you did. Rhythm measures whether the day touched more than work. It caps you at one keystone and three momentum tasks, and it weights the five life domains so that a day spent entirely on business cannot score well however much got finished." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* ---- Tokens: bare :root is the complete light palette ---- */
+:root {
+  --ground:        #F6F6F4;
+  --surface:       #FFFFFF;
+  --raised:        #FBFBFA;
+  --hairline:      #E3E3DF;
+  --hairline-soft: #EDEDE9;
+
+  --ink:      #101114;
+  --ink-2:    #5A5F6A;
+  --ink-3:    #8B909B;
+
+  --accent:      #4257D0;
+  --accent-ink:  #FFFFFF;
+  --accent-wash: rgba(66, 87, 208, 0.08);
+
+  --d-business:      #4257D0;
+  --d-body:          #17914A;
+  --d-mind:          #B31FA8;
+  --d-relationships: #B06A00;
+  --d-recovery:      #0E93C4;
+
+  --positive: #0E9F6E;
+  --caution:  #B58900;
+  --critical: #DC2626;
+
+  --shadow: 0 1px 2px rgba(16, 17, 20, .05), 0 8px 24px rgba(16, 17, 20, .05);
+
+  --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --measure: 34rem;
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:        #0B0C0F;
+    --surface:       #15171C;
+    --raised:        #1D2027;
+    --hairline:      #2A2E37;
+    --hairline-soft: #21242B;
+
+    --ink:   #F5F6F8;
+    --ink-2: #9AA1AE;
+    --ink-3: #6B7280;
+
+    --accent:      #5C77FC;
+    --accent-ink:  #0B0C0F;
+    --accent-wash: rgba(92, 119, 252, 0.12);
+
+    --d-business:      #5C77FC;
+    --d-body:          #0BA05D;
+    --d-mind:          #D546B8;
+    --d-relationships: #CA6E03;
+    --d-recovery:      #1187A8;
+
+    --positive: #0FA271;
+    --caution:  #BC8A0E;
+    --critical: #DE4F4F;
+
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px rgba(0, 0, 0, .3);
+  }
+}
+
+:root[data-theme="dark"] {
+  --ground:        #0B0C0F;
+  --surface:       #15171C;
+  --raised:        #1D2027;
+  --hairline:      #2A2E37;
+  --hairline-soft: #21242B;
+
+  --ink:   #F5F6F8;
+  --ink-2: #9AA1AE;
+  --ink-3: #6B7280;
+
+  --accent:      #5C77FC;
+  --accent-ink:  #0B0C0F;
+  --accent-wash: rgba(92, 119, 252, 0.12);
+
+  --d-business:      #5C77FC;
+  --d-body:          #0BA05D;
+  --d-mind:          #D546B8;
+  --d-relationships: #CA6E03;
+  --d-recovery:      #1187A8;
+
+  --positive: #0FA271;
+  --caution:  #BC8A0E;
+  --critical: #DE4F4F;
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px rgba(0, 0, 0, .3);
+}
+
+/* ---- Base ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.wrap {
+  max-width: 78rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.measure { max-width: var(--measure); }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0;
+}
+
+.lede {
+  font-size: 1.12rem;
+  color: var(--ink-2);
+  line-height: 1.65;
+}
+
+.num { font-variant-numeric: tabular-nums; }
+
+/* Hairline rules carry the structure of the page. */
+.rule {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  margin: 0;
+}
+
+section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.section-head h2 {
+  font-family: var(--display);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -.015em;
+}
+
+/* ---- Masthead ---- */
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--ground) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.masthead-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: .85rem;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: .95rem;
+  letter-spacing: .04em;
+  text-decoration: none;
+}
+
+.mark { display: block; }
+
+.masthead nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: .88rem;
+}
+
+.masthead nav a {
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color .15s;
+}
+
+.masthead nav a:hover { color: var(--ink); }
+
+@media (max-width: 46rem) {
+  .masthead nav .hide-sm { display: none; }
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .7rem 1.15rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-family: var(--sans);
+  font-size: .92rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .12s, background .15s, border-color .15s;
+}
+
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { transform: translateY(-1px); }
+
+.btn-quiet {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--hairline);
+}
+.btn-quiet:hover { border-color: var(--ink-3); }
+
+/* ---- Hero ---- */
+.hero { padding-block: clamp(3.5rem, 9vw, 7rem) clamp(3rem, 7vw, 5rem); }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+
+@media (max-width: 60rem) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
+
+.hero h1 {
+  font-family: var(--display);
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-size: clamp(2.4rem, 6.2vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: -.028em;
+  margin-block: 1.4rem 1.5rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent);
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 2rem;
+}
+
+.hero-note {
+  margin-top: 1.1rem;
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .04em;
+  color: var(--ink-3);
+}
+
+/* ---- The instrument: ring + component bars ---- */
+.instrument {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  box-shadow: var(--shadow);
+}
+
+.gauge {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.gauge svg { flex: none; }
+
+.gauge-track { stroke: var(--hairline); }
+.gauge-arc { transition: stroke-dashoffset .5s cubic-bezier(.4, 0, .2, 1), stroke .3s; }
+
+.gauge-value {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 2.1rem;
+  letter-spacing: -.02em;
+  line-height: 1;
+}
+
+.gauge-label {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-top: .35rem;
+}
+
+.verdict {
+  font-size: .95rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+  min-height: 3rem;
+}
+
+.components {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  margin-top: 1.5rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--hairline-soft);
+}
+
+.component {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr 2.5rem;
+  align-items: center;
+  gap: .8rem;
+  font-size: .82rem;
+}
+
+.component-name { color: var(--ink-2); }
+
+.bar {
+  height: 6px;
+  border-radius: 99px;
+  background: var(--hairline);
+  overflow: hidden;
+}
+
+.bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: var(--accent);
+  transition: width .5s cubic-bezier(.4, 0, .2, 1);
+}
+
+.component-value {
+  font-family: var(--mono);
+  font-size: .82rem;
+  text-align: right;
+  color: var(--ink);
+}
+
+.pinned .bar > span { background: var(--ink-3); opacity: .55; }
+
+.pinned .component-value { color: var(--ink-2); }
+
+.pinned .component-name::after {
+  content: " · held";
+  color: var(--ink-3);
+  font-size: .74rem;
+}
+
+/* ---- Domain toggles ---- */
+.domains {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1.5rem;
+}
+
+.domain {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .5rem .8rem;
+  border-radius: 99px;
+  border: 1px solid var(--hairline);
+  background: transparent;
+  color: var(--ink-2);
+  font-family: var(--sans);
+  font-size: .85rem;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+
+.domain .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 99px;
+  background: currentColor;
+  opacity: .35;
+  transition: opacity .15s;
+}
+
+.domain[aria-pressed="true"] {
+  color: var(--ink);
+  border-color: currentColor;
+  background: var(--accent-wash);
+}
+
+.domain[aria-pressed="true"] .dot { opacity: 1; }
+
+.domain[data-domain="business"]      { --chip: var(--d-business); }
+.domain[data-domain="body"]          { --chip: var(--d-body); }
+.domain[data-domain="mind"]          { --chip: var(--d-mind); }
+.domain[data-domain="relationships"] { --chip: var(--d-relationships); }
+.domain[data-domain="recovery"]      { --chip: var(--d-recovery); }
+.domain .dot { background: var(--chip); }
+.domain[aria-pressed="true"] { border-color: var(--chip); }
+
+/* ---- Generic panels ---- */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.panel h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.panel p {
+  font-size: .92rem;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+/* ---- Tier list: a real sequence, so it is numbered ---- */
+.tiers { display: flex; flex-direction: column; gap: 0; }
+
+.tier {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1.25rem;
+  padding-block: 1.35rem;
+  border-top: 1px solid var(--hairline-soft);
+}
+
+.tier:first-child { border-top: 0; }
+
+.tier-rank {
+  font-family: var(--mono);
+  font-size: .78rem;
+  color: var(--ink-3);
+  padding-top: .2rem;
+}
+
+.tier-cap {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--accent);
+  letter-spacing: .04em;
+}
+
+.tier h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: .3rem; }
+.tier p { font-size: .93rem; color: var(--ink-2); margin-top: .35rem; }
+
+/* ---- Audit sample ---- */
+.audit { display: flex; flex-direction: column; gap: 0; }
+
+.finding {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .85rem;
+  align-items: baseline;
+  padding-block: .85rem;
+  border-top: 1px solid var(--hairline-soft);
+  font-size: .93rem;
+}
+
+.finding:first-child { border-top: 0; }
+
+.flag {
+  font-family: var(--mono);
+  font-size: .66rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .2rem .5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.flag-critical { background: color-mix(in srgb, var(--critical) 16%, transparent); color: var(--critical); }
+.flag-caution  { background: color-mix(in srgb, var(--caution) 18%, transparent);  color: var(--caution); }
+
+.finding span:last-child { color: var(--ink-2); }
+
+/* ---- Feature strip ---- */
+.strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.strip > div {
+  background: var(--surface);
+  padding: 1.35rem 1.25rem;
+}
+
+.strip dt {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: .5rem;
+}
+
+.strip dd {
+  margin: 0;
+  font-size: .93rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ---- FAQ ---- */
+.faq { display: flex; flex-direction: column; }
+
+.faq details {
+  border-top: 1px solid var(--hairline);
+  padding-block: 1.15rem;
+}
+
+.faq details:last-of-type { border-bottom: 1px solid var(--hairline); }
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.02rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::after {
+  content: "+";
+  font-family: var(--mono);
+  color: var(--ink-3);
+  flex: none;
+}
+
+.faq details[open] summary::after { content: "\2013"; }
+
+.faq details p {
+  margin-top: .8rem;
+  color: var(--ink-2);
+  font-size: .95rem;
+  max-width: var(--measure);
+}
+
+/* ---- Footer ---- */
+footer {
+  border-top: 1px solid var(--hairline);
+  padding-block: 2.5rem 3.5rem;
+  font-size: .88rem;
+  color: var(--ink-2);
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+footer a { color: var(--ink-2); text-decoration: none; }
+footer a:hover { color: var(--ink); text-decoration: underline; }
+
+.footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+
+.status {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  color: var(--ink-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="wordmark" href="./">
+      <svg class="mark" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+        <circle cx="11" cy="11" r="9" fill="none" stroke="currentColor" stroke-opacity=".25" stroke-width="2.5"></circle>
+        <path d="M11 2a9 9 0 0 1 7.6 13.8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+        <path d="M8 8.2v5.6M11 6.6v8.8M14 8.2v5.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+      </svg>
+      Rhythm
+    </a>
+    <nav>
+      <a class="hide-sm" href="#score">The score</a>
+      <a class="hide-sm" href="#calendar">Calendar audit</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <a href="support/">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">iOS 17 · Widgets · Calendar-aware · No account</p>
+      <h1>Your calendar decides your day.<br><em>Rhythm decides your week.</em></h1>
+      <p class="lede measure">
+        A daily planner for people whose calendars run their lives. One keystone a day,
+        rituals across five parts of a life, and an audit every few days that makes you
+        look at the week ahead before someone else fills it in for you.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#waitlist">Get the TestFlight invite</a>
+        <a class="btn btn-quiet" href="#score">See how the score works</a>
+      </div>
+      <p class="hero-note">In development · TestFlight first · Free, no subscription</p>
+    </div>
+
+    <!-- The instrument is the hero: the app's actual scoring, live. -->
+    <div class="instrument" id="score">
+      <div class="gauge">
+        <svg width="112" height="112" viewBox="0 0 112 112" role="img" aria-labelledby="gaugeTitle">
+          <title id="gaugeTitle">Balance score gauge</title>
+          <circle class="gauge-track" cx="56" cy="56" r="48" fill="none" stroke-width="9"></circle>
+          <circle id="arc" class="gauge-arc" cx="56" cy="56" r="48" fill="none"
+                  stroke-width="9" stroke-linecap="round"
+                  transform="rotate(-90 56 56)"
+                  stroke-dasharray="301.6" stroke-dashoffset="301.6"></circle>
+        </svg>
+        <div>
+          <div class="gauge-value num" id="scoreOut" aria-live="polite">—</div>
+          <div class="gauge-label">Balance · today</div>
+        </div>
+      </div>
+
+      <div class="components">
+        <div class="component pinned">
+          <span class="component-name">Execution</span>
+          <span class="bar"><span style="width:100%"></span></span>
+          <span class="component-value num">100</span>
+        </div>
+        <div class="component pinned">
+          <span class="component-name">Rituals</span>
+          <span class="bar"><span style="width:100%"></span></span>
+          <span class="component-value num">100</span>
+        </div>
+        <div class="component">
+          <span class="component-name">Coverage</span>
+          <span class="bar"><span id="covBar" style="width:0%"></span></span>
+          <span class="component-value num" id="covOut">0</span>
+        </div>
+        <div class="component pinned">
+          <span class="component-name">Protection</span>
+          <span class="bar"><span style="width:100%"></span></span>
+          <span class="component-value num">100</span>
+        </div>
+      </div>
+
+      <p class="eyebrow" style="margin-top:1.5rem">What did today touch?</p>
+      <div class="domains" id="domains">
+        <button class="domain" data-domain="business" aria-pressed="true"><span class="dot"></span>Business</button>
+        <button class="domain" data-domain="body" aria-pressed="false"><span class="dot"></span>Body</button>
+        <button class="domain" data-domain="mind" aria-pressed="false"><span class="dot"></span>Mind</button>
+        <button class="domain" data-domain="relationships" aria-pressed="false"><span class="dot"></span>People</button>
+        <button class="domain" data-domain="recovery" aria-pressed="false"><span class="dot"></span>Recovery</button>
+      </div>
+
+      <p class="verdict" id="verdict" style="margin-top:1.15rem"></p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ THE ARGUMENT ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head measure">
+      <p class="eyebrow">The argument</p>
+      <h2>Effort was never your problem.</h2>
+    </div>
+    <div class="grid-2">
+      <div class="measure">
+        <p class="lede">
+          You will always feed the business. That part takes care of itself — it has
+          deadlines, other people, and a calendar to enforce it. What quietly starves is
+          everything with no meeting attached to it.
+        </p>
+        <p class="lede" style="margin-top:1.15rem">
+          So Rhythm does not measure how much you did. It measures how much of your life
+          the day reached. Toggle the chips above and try to score well on a day that was
+          all business. You can get to 82 — while four fifths of your life got nothing.
+          That gap is the whole product.
+        </p>
+      </div>
+      <div class="strip">
+        <div>
+          <dt>Execution</dt>
+          <dd>30% — weighted completion of what you actually committed to.</dd>
+        </div>
+        <div>
+          <dt>Rituals</dt>
+          <dd>25% — kept versus due. A deliberate skip is honesty, not a miss.</dd>
+        </div>
+        <div>
+          <dt>Coverage</dt>
+          <dd>25% — how many of the five domains the day touched.</dd>
+        </div>
+        <div>
+          <dt>Protection</dt>
+          <dd>20% — boundaries held, meeting load, room left to think.</dd>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ THE DAY ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head measure">
+      <p class="eyebrow">The day</p>
+      <h2>Three tiers, two of them capped.</h2>
+      <p class="lede">
+        Most planners let you write down everything and then quietly judge you for it.
+        Rhythm caps the top two tiers, because a list you cannot finish is not a plan —
+        it is a record of things you felt guilty about.
+      </p>
+    </div>
+    <div class="tiers">
+      <article class="tier">
+        <span class="tier-rank">01</span>
+        <div>
+          <span class="tier-cap">one per day</span>
+          <h3>Keystone</h3>
+          <p>The one thing that makes today count. If only this gets done, the day still worked.</p>
+        </div>
+      </article>
+      <article class="tier">
+        <span class="tier-rank">02</span>
+        <div>
+          <span class="tier-cap">three per day</span>
+          <h3>Momentum</h3>
+          <p>Real progress, not busywork. Three is the cap and the cap is the feature.</p>
+        </div>
+      </article>
+      <article class="tier">
+        <span class="tier-rank">03</span>
+        <div>
+          <span class="tier-cap">uncapped</span>
+          <h3>Maintenance</h3>
+          <p>The small stuff that keeps the machine running. Batch it. Never let it lead.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ CALENDAR ============ -->
+<section id="calendar">
+  <div class="wrap">
+    <div class="section-head measure">
+      <p class="eyebrow">Calendar integrity</p>
+      <h2>An app that makes you update your calendar.</h2>
+      <p class="lede">
+        Every planner is downstream of one thing: whether your calendar is telling the
+        truth. Rhythm counts the days since you last looked at the week ahead. Past your
+        interval — three days by default — it starts nudging, and the nudge escalates for
+        three days before it stops. An alert that never stops is an alert you turn off.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel">
+        <p class="eyebrow" style="margin-bottom:1rem">Next 7 days · 4 flagged</p>
+        <div class="audit">
+          <div class="finding">
+            <span class="flag flag-critical">Conflict</span>
+            <span>Board call overlaps Nadia 1:1 at 10:30 on Thursday.</span>
+          </div>
+          <div class="finding">
+            <span class="flag flag-critical">Unanswered</span>
+            <span>Q3 planning offsite has been waiting on your response for six days.</span>
+          </div>
+          <div class="finding">
+            <span class="flag flag-caution">Overloaded</span>
+            <span>6h 30m of meetings against an 8h day on Wednesday.</span>
+          </div>
+          <div class="finding">
+            <span class="flag flag-caution">No room</span>
+            <span>Longest clear stretch on Tuesday is 35m. Deep work needs a runway.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="measure">
+        <p class="lede">
+          The audit reads your calendar and nothing else. It looks for the things that
+          quietly rot a week: double bookings, invitations you never answered, days booked
+          past the hard stop you set, and weekdays with nothing on them at all — which
+          almost always means an out-of-date calendar rather than a free day.
+        </p>
+        <p class="lede" style="margin-top:1.15rem">
+          <strong style="color:var(--ink)">Rhythm never writes to your calendar.</strong>
+          Access is read-only and there is no write path anywhere in the app. It tells you
+          what is wrong; you fix it where you already work.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ SURFACES ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head measure">
+      <p class="eyebrow">On your home screen</p>
+      <h2>It nags from outside the app.</h2>
+      <p class="lede">
+        A planner you have to remember to open is a planner you stop opening. Rhythm puts
+        the parts that matter where you already look.
+      </p>
+    </div>
+    <div class="grid-3">
+      <div class="panel">
+        <h3>Interactive widgets</h3>
+        <p>Tap a ritual on the home screen and it is kept — no app launch, no context switch. Today, Rituals and Balance all write straight to the shared store.</p>
+      </div>
+      <div class="panel">
+        <h3>Calendar integrity tile</h3>
+        <p>One number: days since your last review. It turns amber at your interval and red two days past it.</p>
+      </div>
+      <div class="panel">
+        <h3>Lock Screen &amp; StandBy</h3>
+        <p>Circular, rectangular and inline complications. The most urgent thing, not the prettiest one.</p>
+      </div>
+      <div class="panel">
+        <h3>Notifications that stop</h3>
+        <p>Morning brief, midday checkpoint, ritual anchors, a shutdown at your hard stop, a Sunday reset. Every one individually switchable.</p>
+      </div>
+      <div class="panel">
+        <h3>Drift alerts</h3>
+        <p>Three days without touching a domain is where a busy week becomes a pattern. That is when Rhythm says so.</p>
+      </div>
+      <div class="panel">
+        <h3>Siri &amp; Shortcuts</h3>
+        <p>&ldquo;Set my keystone.&rdquo; &ldquo;Check my balance.&rdquo; &ldquo;Mark my calendar reviewed.&rdquo;</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ PRIVACY ============ -->
+<section>
+  <div class="wrap grid-2">
+    <div class="section-head measure" style="margin-bottom:0">
+      <p class="eyebrow">Privacy</p>
+      <h2>There is nowhere to send your data, by design.</h2>
+    </div>
+    <div class="measure">
+      <p class="lede">
+        No account. No sign-in. No analytics SDK. No cloud sync. Your plans, your rituals
+        and everything derived from your calendar live in a container on your device.
+      </p>
+      <p class="lede" style="margin-top:1.15rem">
+        Every notification is scheduled locally, so the whole daily loop works in airplane
+        mode. Calendar events are read into memory, analysed, and discarded — only the
+        derived numbers are ever written down.
+        <a href="privacy/" style="color:var(--accent)">Read the policy</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head measure">
+      <p class="eyebrow">Questions</p>
+      <h2>The things people actually ask.</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>Is there an app that reminds you to update your calendar?</summary>
+        <p>That is the feature Rhythm was built around. It tracks how long it has been since you last reviewed the week ahead, and once you pass your chosen interval it starts nudging — escalating for three days, then stopping. The review itself walks you through conflicts, unanswered invites, days booked past your hard stop, and weekdays with nothing on them.</p>
+      </details>
+      <details>
+        <summary>Does Rhythm change my calendar events?</summary>
+        <p>No. Calendar access is read-only and there is no write path anywhere in the app. Rhythm reads existing events, analyses them on device, and tells you what needs fixing. You make the change in your own calendar app.</p>
+      </details>
+      <details>
+        <summary>What is a work-life balance score, exactly?</summary>
+        <p>A 0–100 daily number built from four measured parts: weighted completion of what you committed to (30%), rituals kept versus due (25%), how many of five life domains the day touched (25%), and whether your boundaries held (20%). The breakdown is always shown next to the number, because a single opaque score is something to game rather than something to act on.</p>
+      </details>
+      <details>
+        <summary>How is this different from a to-do list?</summary>
+        <p>A to-do list measures how much you did. Rhythm measures how much of your life the day reached. It caps you at one keystone and three momentum tasks, and weights the five domains so a day spent entirely on business cannot score well however much got finished.</p>
+      </details>
+      <details>
+        <summary>Does it need an account or an internet connection?</summary>
+        <p>Neither. There is no sign-in and no server. Every notification is scheduled on device, so the daily loop works offline.</p>
+      </details>
+      <details>
+        <summary>What happens if I skip a habit on purpose?</summary>
+        <p>A deliberate skip shrinks the denominator instead of counting as a miss, and pauses your streak rather than ending it. The app is trying to get an honest record out of you, not a padded one.</p>
+      </details>
+      <details>
+        <summary>Which iPhones does it run on?</summary>
+        <p>iOS 17 and later, which covers iPhone XS and newer. The interactive widgets and the balance chart both need iOS 17 APIs.</p>
+      </details>
+      <details>
+        <summary>When can I actually use it?</summary>
+        <p>TestFlight comes first — that is where the early builds get fixed. The App Store release follows once the beta has been through real weeks with real calendars.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ CTA ============ -->
+<section id="waitlist">
+  <div class="wrap" style="text-align:center">
+    <div class="section-head" style="align-items:center; margin-inline:auto; max-width:40rem">
+      <p class="eyebrow">Early access</p>
+      <h2>Run one honest week.</h2>
+      <p class="lede">
+        Rhythm is in development and goes to TestFlight first. If you want a build as soon
+        as there is one worth using, that is where to start.
+      </p>
+    </div>
+    <div class="hero-cta" style="justify-content:center">
+      <a class="btn btn-primary" href="mailto:hello@example.com?subject=Rhythm%20TestFlight">Request a TestFlight invite</a>
+      <a class="btn btn-quiet" href="https://github.com/Tynagorski/Rhythm">Read the source</a>
+    </div>
+    <p class="hero-note">Replace this link with your TestFlight public URL once the build is uploaded.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <a class="wordmark" href="./" style="color:var(--ink)">
+        <svg class="mark" width="20" height="20" viewBox="0 0 22 22" aria-hidden="true">
+          <circle cx="11" cy="11" r="9" fill="none" stroke="currentColor" stroke-opacity=".25" stroke-width="2.5"></circle>
+          <path d="M11 2a9 9 0 0 1 7.6 13.8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+          <path d="M8 8.2v5.6M11 6.6v8.8M14 8.2v5.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+        </svg>
+        Rhythm
+      </a>
+      <p class="status" style="margin-top:.75rem">A daily planner for iOS · In development</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="privacy/">Privacy</a>
+      <a href="support/">Support</a>
+      <a href="https://github.com/Tynagorski/Rhythm">Source</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // The real weights from BalanceEngine. Business is weighted lowest on purpose:
+  // a top performer always feeds it, so rewarding it further would just certify
+  // an unbalanced day.
+  var WEIGHTS = {
+    business: 0.8, body: 1.1, mind: 1.0, relationships: 1.1, recovery: 1.0
+  };
+  var TOTAL = 5.0;
+
+  // Everything except coverage is held at 100 so the demo isolates one variable.
+  var W = { execution: 0.30, rituals: 0.25, coverage: 0.25, protection: 0.20 };
+  var SHUTDOWN_BONUS = 0.03;
+  var CIRCUMFERENCE = 2 * Math.PI * 48;
+
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.domain'));
+  var arc = document.getElementById('arc');
+  var scoreOut = document.getElementById('scoreOut');
+  var covOut = document.getElementById('covOut');
+  var covBar = document.getElementById('covBar');
+  var verdict = document.getElementById('verdict');
+
+  var NAMES = {
+    business: 'Business', body: 'Body', mind: 'Mind',
+    relationships: 'People', recovery: 'Recovery'
+  };
+
+  function band(score) {
+    if (score < 45) return 'var(--critical)';
+    if (score < 70) return 'var(--caution)';
+    return 'var(--positive)';
+  }
+
+  function selected() {
+    return buttons.filter(function (b) { return b.getAttribute('aria-pressed') === 'true'; })
+                  .map(function (b) { return b.dataset.domain; });
+  }
+
+  function say(covered, coverage, score) {
+    var missing = Object.keys(WEIGHTS).filter(function (d) { return covered.indexOf(d) === -1; });
+    if (covered.length === 0) {
+      return 'Zero coverage, and the score is still 78 — because the execution was perfect. That is precisely why Rhythm never shows the number without the breakdown.';
+    }
+    if (missing.length === 0) {
+      return 'Full coverage. This is the day worth understanding and repeating.';
+    }
+    if (covered.length === 1 && covered[0] === 'business') {
+      return 'A score of ' + score + ' on a day that touched one fifth of your life. Coverage is ' +
+             coverage + '. The breakdown is the part that tells the truth.';
+    }
+    var names = missing.map(function (d) { return NAMES[d]; });
+    var tail = names.length > 1
+      ? names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1]
+      : names[0];
+    return 'Coverage ' + coverage + '. ' + tail + ' got nothing today.';
+  }
+
+  function render() {
+    var covered = selected();
+    var earned = covered.reduce(function (sum, d) { return sum + WEIGHTS[d]; }, 0);
+    var coverageRatio = Math.min(1, earned / TOTAL);
+
+    var weighted = W.execution + W.rituals + W.protection + (W.coverage * coverageRatio);
+    var score = Math.round(Math.max(0, Math.min(1, weighted + SHUTDOWN_BONUS)) * 100);
+    var coverage = Math.round(coverageRatio * 100);
+
+    scoreOut.textContent = score;
+    scoreOut.style.color = band(score);
+    arc.style.stroke = band(score);
+    arc.style.strokeDashoffset = CIRCUMFERENCE * (1 - score / 100);
+
+    covOut.textContent = coverage;
+    covOut.style.color = band(coverage);
+    covBar.style.width = coverage + '%';
+    covBar.style.background = band(coverage);
+    verdict.textContent = say(covered, coverage, score);
+  }
+
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var on = button.getAttribute('aria-pressed') === 'true';
+      button.setAttribute('aria-pressed', on ? 'false' : 'true');
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>

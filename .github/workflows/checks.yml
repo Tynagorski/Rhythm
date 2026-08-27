@@ -1,0 +1,37 @@
+name: Checks
+
+# The repo has no macOS runner, so this cannot compile the app. It runs the
+# checks that do not need a Swift toolchain — the ones that catch a broken
+# project file or an extension-unsafe import before they reach a Mac.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Swift delimiters and string literals
+        run: python3 Scripts/check_swift_syntax.py
+
+      - name: Xcode project integrity
+        run: python3 Scripts/check_xcodeproj.py
+
+      - name: Widget extension has no app-only dependencies
+        run: python3 Scripts/check_target_membership.py
+
+      - name: Site pages and metadata
+        run: python3 Scripts/check_site.py
+
+      - name: Project file is up to date with the sources on disk
+        run: |
+          python3 Scripts/generate_xcodeproj.py
+          if ! git diff --quiet -- Rhythm.xcodeproj; then
+            echo "::error::Rhythm.xcodeproj is stale. Run: python3 Scripts/generate_xcodeproj.py"
+            git diff --stat -- Rhythm.xcodeproj
+            exit 1
+          fi
